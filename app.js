@@ -47,6 +47,7 @@
       const main = el('figure', { class: `project__shot ${shots[0].fit === 'contain' ? 'project__shot--contain' : ''}` }, [
         el('img', { src: shots[0].src, alt: pick(lang, shots[0].alt), loading: 'eager', decoding: 'async' }),
       ]);
+      const caption = el('p', { class: 'project__caption', text: pick(lang, shots[0].alt) });
       const thumbs = el('div', { class: 'project__thumbs', role: 'tablist' });
       shots.forEach((s, i) => {
         const btn = el('button', { type: 'button', 'aria-current': i === 0, 'aria-label': pick(lang, s.alt) }, [
@@ -56,6 +57,7 @@
           const img = main.querySelector('img');
           img.src = s.src;
           img.alt = pick(lang, s.alt);
+          caption.textContent = pick(lang, s.alt);
           main.classList.toggle('project__shot--contain', s.fit === 'contain');
           thumbs.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', b === btn));
         });
@@ -80,7 +82,7 @@
       ]);
 
       root.append(el('article', { class: 'project', id: `project-${p.id}` }, [
-        el('div', { class: 'project__media' }, [main, shots.length > 1 ? thumbs : null]),
+        el('div', { class: 'project__media' }, [main, caption, shots.length > 1 ? thumbs : null]),
         body,
       ]));
     });
