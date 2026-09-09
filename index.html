@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0b0e14" />
+    <title>Pedro Egerland · Senior Software Engineer</title>
+    <meta name="description" content="Portfólio de Pedro Egerland — engenheiro de software sênior (Go, Node.js, React, AWS, Kubernetes). Projetos, experiência e contato. / Portfolio of Pedro Egerland — Senior Software Engineer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pedro Egerland · Senior Software Engineer" />
+    <meta property="og:description" content="Go · Node.js · React · AWS · Kubernetes. Projetos e experiência." />
+    <meta property="og:url" content="https://pedroegerland.github.io/portfolio/" />
+    <meta property="og:image" content="https://pedroegerland.github.io/portfolio/assets/projects/atelie_home.jpg" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#projects" data-i18n="skip">Pular para os projetos</a>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a href="#top" class="brand" aria-label="Pedro Egerland">
+          <span class="brand__mark">PE</span>
+          <span class="brand__name">Pedro Egerland</span>
+        </a>
+        <nav class="nav__links" aria-label="Seções">
+          <a href="#projects" data-i18n="nav.projects">Projetos</a>
+          <a href="#experience" data-i18n="nav.experience">Experiência</a>
+          <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+          <a href="#contact" data-i18n="nav.contact">Contato</a>
+        </nav>
+        <div class="lang" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero container">
+        <p class="eyebrow mono" data-i18n="hero.eyebrow">Senior Software Engineer · Jundiaí, SP · Remoto</p>
+        <h1 class="hero__title">
+          Pedro <span class="accent">Egerland</span>
+        </h1>
+        <p class="hero__lead" data-i18n="hero.lead">
+          Construo backends escaláveis em Go e Node.js, com AWS, Kubernetes e mensageria — e gosto de levar o
+          produto até a tela, seja em React, Flutter ou um jogo.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects" data-i18n="hero.cta">Ver projetos</a>
+          <a class="btn btn--ghost" href="https://github.com/pedroegerland" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/pedroegerland/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+        <dl class="stats">
+          <div><dt data-i18n="stats.years">7+ anos</dt><dd data-i18n="stats.yearsLabel">em tecnologia</dd></div>
+          <div><dt data-i18n="stats.go">5+ anos</dt><dd data-i18n="stats.goLabel">com Go em produção</dd></div>
+          <div><dt data-i18n="stats.domains">Fintech</dt><dd data-i18n="stats.domainsLabel">crédito, pagamentos, banking</dd></div>
+          <div><dt data-i18n="stats.goal">Principal</dt><dd data-i18n="stats.goalLabel">Engineer é o próximo passo</dd></div>
+        </dl>
+      </section>
+
+      <!-- About -->
+      <section class="about container" id="about">
+        <div class="about__grid">
+          <div>
+            <p class="eyebrow mono" data-i18n="about.eyebrow">Sobre</p>
+            <h2 data-i18n="about.title">Do jogo indie ao core bancário</h2>
+          </div>
+          <div class="about__text">
+            <p data-i18n="about.p1">
+              Comecei em jogos (Unity, Unreal Engine e rigging 3D), passei por QA e migrei para engenharia de
+              software em 2021. Desde então trabalho em fintechs e produtos financeiros: integrações bancárias e
+              Pix, enriquecimento de dados de clientes, análise de crédito e risco, gestão de investimentos via API.
+            </p>
+            <p data-i18n="about.p2">
+              Gosto de refatorar sistemas legados complexos, cuidar de migrações críticas sem downtime, escrever
+              documentação que as pessoas realmente usam e alinhar o que o time constrói ao que o cliente precisa.
+              Meus projetos pessoais são o laboratório onde testo stacks completas, do banco ao pixel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section container" id="projects">
+        <div class="section__head">
+          <p class="eyebrow mono" data-i18n="projects.eyebrow">Projetos</p>
+          <h2 data-i18n="projects.title">Coisas que construí de ponta a ponta</h2>
+          <p class="section__sub" data-i18n="projects.sub">
+            Aplicações reais rodando localmente no momento das capturas. Cada card mostra a stack, as decisões
+            de arquitetura e o estado atual.
+          </p>
+        </div>
+        <div id="projects-list" class="projects"></div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section section--alt" id="experience">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow mono" data-i18n="experience.eyebrow">Experiência</p>
+            <h2 data-i18n="experience.title">Trajetória profissional</h2>
+          </div>
+          <ol id="experience-list" class="timeline"></ol>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section container" id="skills">
+        <div class="section__head">
+          <p class="eyebrow mono" data-i18n="skills.eyebrow">Habilidades</p>
+          <h2 data-i18n="skills.title">Stack e ferramentas</h2>
+        </div>
+        <div id="skills-list" class="skills"></div>
+      </section>
+
+      <!-- Education & languages -->
+      <section class="section section--alt" id="education">
+        <div class="container edu">
+          <div>
+            <p class="eyebrow mono" data-i18n="education.eyebrow">Formação</p>
+            <h2 data-i18n="education.title">Educação</h2>
+            <ul id="education-list" class="edu__list"></ul>
+          </div>
+          <div>
+            <p class="eyebrow mono" data-i18n="languages.eyebrow">Idiomas</p>
+            <h2 data-i18n="languages.title">Idiomas</h2>
+            <ul id="languages-list" class="edu__list"></ul>
+            <p class="eyebrow mono" style="margin-top: 2.5rem" data-i18n="goals.eyebrow">Objetivos</p>
+            <ul id="goals-list" class="edu__list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section container contact" id="contact">
+        <p class="eyebrow mono" data-i18n="contact.eyebrow">Contato</p>
+        <h2 data-i18n="contact.title">Vamos conversar?</h2>
+        <p class="section__sub" data-i18n="contact.sub">
+          Aberto a oportunidades sênior/principal em backend, plataformas e produtos financeiros — remoto ou híbrido
+          em São Paulo.
+        </p>
+        <div class="contact__links">
+          <a class="btn btn--primary" href="mailto:pedro.egerland94@gmail.com">pedro.egerland94@gmail.com</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/pedroegerland/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="btn btn--ghost" href="https://github.com/pedroegerland" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn btn--ghost" href="https://www.artstation.com/pedroegerland" target="_blank" rel="noreferrer">ArtStation ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© <span id="year"></span> Pedro Egerland</span>
+        <span class="mono" data-i18n="footer.built">HTML, CSS e JS puros · hospedado no GitHub Pages</span>
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
+      <img alt="" />
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
