@@ -24,7 +24,7 @@ window.PORTFOLIO = {
       'contact.sub': 'Aberto a oportunidades sênior/principal em backend, plataformas e produtos financeiros — remoto ou híbrido em São Paulo.',
       'footer.built': 'HTML, CSS e JS puros · hospedado no GitHub Pages',
       'labels.live': 'Ver online', 'labels.repo': 'Repositório', 'labels.private': 'código privado · disponível sob pedido',
-      'labels.status.live': 'em produção', 'labels.status.wip': 'em desenvolvimento', 'labels.status.done': 'concluído',
+      'labels.status.live': 'em produção', 'labels.status.wip': 'em desenvolvimento', 'labels.status.done': 'concluído', 'labels.status.discontinued': 'descontinuado',
       'labels.current': 'atual', 'labels.stack': 'Stack',
     },
     en: {
@@ -50,7 +50,7 @@ window.PORTFOLIO = {
       'contact.sub': 'Open to senior/principal roles in backend, platform and financial products — remote or hybrid in São Paulo.',
       'footer.built': 'Plain HTML, CSS and JS · hosted on GitHub Pages',
       'labels.live': 'Live site', 'labels.repo': 'Repository', 'labels.private': 'private code · available on request',
-      'labels.status.live': 'in production', 'labels.status.wip': 'in progress', 'labels.status.done': 'completed',
+      'labels.status.live': 'in production', 'labels.status.wip': 'in progress', 'labels.status.done': 'completed', 'labels.status.discontinued': 'discontinued',
       'labels.current': 'present', 'labels.stack': 'Stack',
     },
   },
@@ -59,7 +59,7 @@ window.PORTFOLIO = {
     {
       id: 'karenclementeatelie',
       name: 'Karen Clemente Ateliê',
-      status: 'live',
+      status: 'wip',
       repo: 'https://github.com/pedroegerland/karenclementeatelie',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'Firestore', 'Firebase Storage', 'Docker', 'Cloud Run', 'GitHub Actions'],
@@ -93,7 +93,7 @@ window.PORTFOLIO = {
     {
       id: 'imobiliaria',
       name: 'Imobiliária Marques & Henriques',
-      status: 'live',
+      status: 'discontinued',
       repo: 'https://github.com/pedroegerland/imobiliaria-marques-e-henriques',
       repoPrivate: true,
       tags: ['React 18', 'TypeScript', 'Tailwind', 'Vite', 'Go 1.27', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'Cognito', 'S3', 'AWS SAM', 'Vercel'],
@@ -131,7 +131,7 @@ window.PORTFOLIO = {
     {
       id: 'cantina',
       name: 'Cantina',
-      status: 'live',
+      status: 'wip',
       repo: 'https://github.com/pedroegerland/cafeteria',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'SQLite (pure Go)', 'JWT HS256', 'bcrypt', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'TanStack Query', 'Docker', 'GitHub Actions'],

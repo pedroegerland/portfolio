@@ -112,6 +112,7 @@ p { margin: 0; }
 .badge { font: 500 .68rem var(--font-mono); letter-spacing: .1em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .badge--live { color: var(--ok); border-color: rgba(126, 231, 135, .35); }
 .badge--wip { color: var(--accent-2); border-color: rgba(245, 194, 107, .35); }
+.badge--discontinued { color: var(--muted); border-color: var(--line); text-decoration: line-through; text-decoration-color: rgba(152,162,184,.6); }
 .project__desc { color: var(--muted); }
 .project__points { margin: 0; padding-left: 1.1rem; color: var(--muted); display: grid; gap: .35rem; font-size: .95rem; }
 .project__points li::marker { color: var(--accent); }
