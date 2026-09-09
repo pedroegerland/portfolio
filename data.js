@@ -60,7 +60,6 @@ window.PORTFOLIO = {
       id: 'karenclementeatelie',
       name: 'Karen Clemente Ateliê',
       status: 'live',
-      live: 'https://karenclementeatelie.web.app',
       repo: 'https://github.com/pedroegerland/karenclementeatelie',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'Firestore', 'Firebase Storage', 'Docker', 'Cloud Run', 'GitHub Actions'],
