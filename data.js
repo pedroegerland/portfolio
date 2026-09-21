@@ -62,7 +62,7 @@ window.PORTFOLIO = {
       status: 'wip',
       repo: 'https://github.com/pedroegerland/karenclementeatelie',
       repoPrivate: true,
-      tags: ['Go 1.27', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'Firestore', 'Firebase Storage', 'Docker', 'Cloud Run', 'GitHub Actions'],
+      tags: ['Go 1.27', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'DynamoDB', 'S3 + CloudFront', 'AWS Lambda', 'AWS CDK (Go)', 'Docker', 'GitHub Actions'],
       shots: [
         { src: 'assets/projects/atelie_home.jpg', alt: { pt: 'Home do catálogo com hero e grade de produtos', en: 'Catalog home with hero and product grid' } },
         { src: 'assets/projects/atelie_produto.jpg', alt: { pt: 'Página de produto com specs, galeria e CTA de WhatsApp', en: 'Product page with specs, gallery and WhatsApp CTA' } },
@@ -77,16 +77,16 @@ window.PORTFOLIO = {
       },
       points: {
         pt: [
-          'Backend Go 1.27 hexagonal sem dependências externas lendo o Firestore pela REST pública, com cache em memória e refresh em segundo plano (serve dado antigo se o Firestore falhar).',
+          'Backend Go 1.27 hexagonal lendo o catálogo do DynamoDB, com cache em memória e refresh em segundo plano (serve dado antigo se o banco falhar); imagens em S3 atrás do CloudFront.',
           'Open Graph injetado no servidor por produto, sitemap.xml e robots.txt gerados do catálogo — links no WhatsApp mostram a foto da peça.',
           'Busca sem acento e com sinônimos, slugs com compatibilidade para links antigos, produtos relacionados.',
-          'Design inspirado na página Rover Pack (Dribbble); testes Go com ~85% de cobertura nos pacotes de lógica; Dockerfile distroless + CI.',
+          'Design inspirado na página Rover Pack (Dribbble); testes Go com ~85% de cobertura nos pacotes de lógica; a mesma imagem distroless roda na Lambda (Lambda Web Adapter) atrás do CloudFront, tudo em CDK Go com deploy por OIDC.',
         ],
         en: [
-          'Hexagonal backend with zero external dependencies reading Firestore through its public REST API, with in-memory cache and background refresh (serves stale data if Firestore is down).',
+          'Hexagonal Go backend reading the catalog from DynamoDB, with in-memory cache and background refresh (serves stale data if the database is down); images on S3 behind CloudFront.',
           'Server-injected Open Graph per product plus sitemap.xml and robots.txt generated from the catalog — WhatsApp links preview the piece photo.',
           'Accent-insensitive synonym search, slugs backwards-compatible with old links, related products.',
-          'Design inspired by the Rover Pack product page (Dribbble); Go tests at ~85% coverage on logic packages; distroless Dockerfile + CI.',
+          'Design inspired by the Rover Pack product page (Dribbble); Go tests at ~85% coverage on logic packages; the same distroless image runs on Lambda (Lambda Web Adapter) behind CloudFront, all in Go CDK with OIDC deploys.',
         ],
       },
     },
@@ -168,30 +168,30 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: 'watchmykidphone',
-      name: 'WatchMyKidPhone',
+      id: 'farol',
+      name: 'Farol',
       status: 'wip',
-      tags: ['Go 1.27', 'chi', 'AWS Lambda', 'DynamoDB single-table', 'Cognito', 'SNS · FCM · APNS', 'AWS CDK (Go)', 'React Native', 'Expo', 'TypeScript', 'Kotlin', 'Swift', 'pnpm workspaces'],
+      tags: ['Go 1.27', 'chi', 'AWS Lambda', 'DynamoDB single-table', 'Cognito', 'API Gateway WebSocket', 'AWS CDK (Go)', 'React Native', 'Expo', 'TypeScript', 'Kotlin', 'Swift', 'pnpm workspaces'],
       shots: [
         { src: 'assets/projects/wmk_api_flow.jpg', fit: 'contain', alt: { pt: 'API real rodando local com DynamoDB Local: família, pareamento, dispositivo, localização, tempo de tela e bloqueio', en: 'Real API running locally on DynamoDB Local: family, pairing, device, location, screen time and block' } },
         { src: 'assets/projects/wmk_tests.jpg', fit: 'contain', alt: { pt: 'Saída real dos testes Go do backend e estrutura do monorepo', en: 'Real Go backend test output and monorepo layout' } },
       ],
       desc: {
-        pt: 'Plataforma de controle parental: pais acompanham localização, uso de apps e tempo de tela, aprovam instalações, bloqueiam o aparelho remotamente e pedem uma captura de tela com consentimento da criança.',
-        en: 'Parental-control platform: parents follow location, app usage and screen time, approve installs, lock the device remotely and request a screenshot with the child’s consent.',
+        pt: 'Farol ("lighthouse"): plataforma de controle parental em que pais acompanham localização, uso de apps e tempo de tela, aprovam instalações, bloqueiam o aparelho remotamente e pedem uma captura de tela com consentimento da criança.',
+        en: 'Farol (Portuguese for lighthouse): parental-control platform where parents follow location, app usage and screen time, approve installs, lock the device remotely and request a screenshot with the child’s consent.',
       },
       points: {
         pt: [
           'Monorepo pnpm com apps React Native separados para pais e filhos, pacotes compartilhados de tipos e cliente HTTP.',
           'Backend Go hexagonal (domain → app → infra/transport) rodando em Lambda + API Gateway, DynamoDB single-table com GSI e testes de domínio/casos de uso com fakes.',
           'Módulos nativos: Kotlin (Device Admin, Accessibility, UsageStats, MediaProjection) e Swift (Family Controls, DeviceActivityMonitor).',
-          'Infra com AWS CDK em Go (auth, dados, API, notificações). Sem UI capturável ainda — as imagens mostram a API respondendo de verdade sobre DynamoDB Local e a suíte de testes.',
+          'Canal realtime por API Gateway WebSocket (sem FCM/Firebase: o app do filho mantém o socket pelo foreground service) e infra com AWS CDK em Go (auth, dados, realtime, API). Sem UI capturável ainda — as imagens mostram a API respondendo de verdade sobre DynamoDB Local e a suíte de testes.',
         ],
         en: [
           'pnpm monorepo with separate React Native apps for parents and children plus shared type and HTTP client packages.',
           'Hexagonal Go backend (domain → app → infra/transport) on Lambda + API Gateway, DynamoDB single-table with a GSI, and domain/use-case tests with fakes.',
           'Native modules: Kotlin (Device Admin, Accessibility, UsageStats, MediaProjection) and Swift (Family Controls, DeviceActivityMonitor).',
-          'Infrastructure with AWS CDK in Go (auth, data, API, notifications). No capturable UI yet — the images show the API answering for real on DynamoDB Local and the test suite.',
+          'Realtime channel over API Gateway WebSocket (no FCM/Firebase: the child app holds the socket from its foreground service) and infrastructure with AWS CDK in Go (auth, data, realtime, API). No capturable UI yet — the images show the API answering for real on DynamoDB Local and the test suite.',
         ],
       },
     },
