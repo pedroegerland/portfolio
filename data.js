@@ -129,10 +129,10 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: 'lunchtab',
-      name: 'Lunchtab',
+      id: 'mealmate',
+      name: 'MealMate',
       status: 'wip',
-      repo: 'https://github.com/pedroegerland/lunchtab',
+      repo: 'https://github.com/pedroegerland/mealmate',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'SQLite (pure Go)', 'JWT HS256', 'bcrypt', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'TanStack Query', 'Docker', 'GitHub Actions'],
       shots: [
