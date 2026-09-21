@@ -129,10 +129,10 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: 'cantina',
-      name: 'Cantina',
+      id: 'lunchtab',
+      name: 'Lunchtab',
       status: 'wip',
-      repo: 'https://github.com/pedroegerland/cafeteria',
+      repo: 'https://github.com/pedroegerland/lunchtab',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'SQLite (pure Go)', 'JWT HS256', 'bcrypt', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'TanStack Query', 'Docker', 'GitHub Actions'],
       shots: [
@@ -168,8 +168,8 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: 'farol',
-      name: 'Farol',
+      id: 'aegiskids',
+      name: 'AegisKids',
       status: 'wip',
       tags: ['Go 1.27', 'chi', 'AWS Lambda', 'DynamoDB single-table', 'Cognito', 'API Gateway WebSocket', 'AWS CDK (Go)', 'React Native', 'Expo', 'TypeScript', 'Kotlin', 'Swift', 'pnpm workspaces'],
       shots: [
@@ -177,8 +177,8 @@ window.PORTFOLIO = {
         { src: 'assets/projects/wmk_tests.jpg', fit: 'contain', alt: { pt: 'Saída real dos testes Go do backend e estrutura do monorepo', en: 'Real Go backend test output and monorepo layout' } },
       ],
       desc: {
-        pt: 'Farol ("lighthouse"): plataforma de controle parental em que pais acompanham localização, uso de apps e tempo de tela, aprovam instalações, bloqueiam o aparelho remotamente e pedem uma captura de tela com consentimento da criança.',
-        en: 'Farol (Portuguese for lighthouse): parental-control platform where parents follow location, app usage and screen time, approve installs, lock the device remotely and request a screenshot with the child’s consent.',
+        pt: 'AegisKids: plataforma de controle parental em que pais acompanham localização, uso de apps e tempo de tela, aprovam instalações, bloqueiam o aparelho remotamente e pedem uma captura de tela com consentimento da criança.',
+        en: 'AegisKids: parental-control platform where parents follow location, app usage and screen time, approve installs, lock the device remotely and request a screenshot with the child’s consent.',
       },
       points: {
         pt: [

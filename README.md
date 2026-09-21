@@ -23,8 +23,8 @@ Published at **https://pedroegerland.github.io/portfolio/** through GitHub Pages
 |---------|-------|-------------|
 | Karen Clemente Ateliê | Go + React monolith, DynamoDB, S3/CloudFront, Lambda, CDK | [karenclementeatelie](https://github.com/pedroegerland/karenclementeatelie) |
 | Imobiliária Marques & Henriques | React/TS, Go Lambdas, DynamoDB, Cognito, SAM | [imobiliaria-marques-e-henriques](https://github.com/pedroegerland/imobiliaria-marques-e-henriques) |
-| Cantina | Go 1.27 + React monolith, SQLite, JWT, ECS Fargate + EFS (CDK) | [cafeteria](https://github.com/pedroegerland/cafeteria) |
-| Farol | Go hexagonal, DynamoDB, API Gateway WebSocket, CDK, React Native, Kotlin/Swift | em desenvolvimento / in progress |
+| Lunchtab | Go 1.27 + React monolith, SQLite, JWT, ECS Fargate + EFS (CDK) | [lunchtab](https://github.com/pedroegerland/lunchtab) |
+| AegisKids | Go hexagonal, DynamoDB, API Gateway WebSocket, CDK, React Native, Kotlin/Swift | em desenvolvimento / in progress |
 
 ## Rodar localmente / Run locally
 
