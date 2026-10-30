@@ -342,7 +342,7 @@ window.PORTFOLIO = {
 
   skills: [
     { title: { pt: 'Backend', en: 'Backend' }, items: ['Go', 'Node.js', 'TypeScript', 'GraphQL', 'REST / Swagger', 'gRPC', { pt: 'Arquitetura hexagonal', en: 'Hexagonal architecture' }] },
-    { title: { pt: 'Cloud & Infra', en: 'Cloud & Infra' }, items: ['AWS (Lambda, SQS/SNS, Step Functions, DynamoDB, S3, Cognito)', 'Kubernetes', 'Docker', 'Terraform', 'AWS CDK / SAM', 'Serverless', 'Datadog', 'GitHub Actions'] },
+    { title: { pt: 'Cloud & Infra', en: 'Cloud & Infra' }, items: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'AWS CDK / SAM', 'Serverless', 'Datadog', 'GitHub Actions'] },
     { title: { pt: 'Dados & Mensageria', en: 'Data & Messaging' }, items: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Redis', 'Kafka', 'RabbitMQ', 'ElasticSearch', 'Firestore'] },
     { title: { pt: 'Frontend & Mobile', en: 'Frontend & Mobile' }, items: ['React', 'Tailwind CSS', 'Vite', 'Flutter', 'React Native / Expo', { pt: 'Kotlin & Swift (módulos nativos)', en: 'Kotlin & Swift (native modules)' }] },
     { title: { pt: 'Games & 3D', en: 'Games & 3D' }, items: ['Unreal Engine (C++ / Blueprint)', 'Unity (C#)', { pt: 'Rigging de personagens', en: 'Character rigging' }] },

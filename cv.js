@@ -130,12 +130,41 @@
       ...DATA.languages.map((l) => ({ text: [{ text: pick(l.name), bold: true }, { text: ` — ${pick(l.level)}`, color: GRAY }], style: 'body', margin: [0, 0, 0, 3] })),
     ];
 
+    // Skill chips: label with a detached underline, packed greedily into rows that fit the column.
+    const chipFont = 8;
+    const chipPad = 5;
+    const chipGap = 5;
+    const chipLayout = {
+      hLineWidth: (i, node) => (i === node.table.body.length ? 0.8 : 0),
+      vLineWidth: () => 0,
+      hLineColor: () => '#aeb4c0',
+      paddingLeft: () => chipPad,
+      paddingRight: () => chipPad,
+      paddingTop: () => 1,
+      paddingBottom: () => 3,
+    };
+    const chipWidth = (label) => label.length * chipFont * 0.58 + chipPad * 2;
+    const chips = (labels, width) => {
+      const rows = [];
+      let row = [];
+      let used = 0;
+      labels.forEach((label) => {
+        const w = chipWidth(label);
+        if (row.length && used + chipGap + w > width) { rows.push(row); row = []; used = 0; }
+        row.push(label);
+        used += (row.length > 1 ? chipGap : 0) + w;
+      });
+      if (row.length) rows.push(row);
+      return rows.map((r) => ({
+        columns: r.map((label) => ({ width: 'auto', table: { body: [[{ text: label, style: 'chip' }]] }, layout: chipLayout })),
+        columnGap: chipGap,
+        margin: [0, 0, 0, chipGap],
+      }));
+    };
+
     const skills = [...heading(t('cv.skills'), rightWidth)];
     DATA.skills.forEach((group) => {
-      skills.push(
-        { text: pick(group.title), style: 'skillTitle' },
-        { text: group.items.map(pick).join(', '), style: 'skillItems' },
-      );
+      skills.push({ text: pick(group.title), style: 'skillTitle' }, ...chips(group.items.map(pick), rightWidth));
     });
 
     const goals = [...heading(t('cv.goals'), rightWidth), bullets(list(DATA.goals))];
@@ -155,7 +184,7 @@
       {
         columns: [
           { width: leftWidth, stack: [...summary, spacer(), ...experience] },
-          { width: rightWidth, stack: [...skills, spacer(), ...education, spacer(), ...languages, spacer(), ...goals, spacer(), ...links] },
+          { width: rightWidth, stack: [...skills, spacer(), { unbreakable: true, stack: education }, spacer(), { unbreakable: true, stack: languages }, spacer(), { unbreakable: true, stack: goals }, spacer(), { unbreakable: true, stack: links }] },
         ],
         columnGap: gap,
       },
@@ -185,8 +214,8 @@
         meta: { fontSize: 8.3, color: GRAY, margin: [0, 1, 0, 1] },
         body: { fontSize: 8.6, color: INK, lineHeight: 1.18 },
         stack: { fontSize: 7.8, color: GRAY, margin: [0, 3, 0, 0] },
-        skillTitle: { fontSize: 9, bold: true, color: BLUE, margin: [0, 4, 0, 1] },
-        skillItems: { fontSize: 8.5, color: INK, lineHeight: 1.25, margin: [0, 0, 0, 4] },
+        skillTitle: { fontSize: 9, bold: true, color: BLUE, margin: [0, 4, 0, 4] },
+        chip: { fontSize: chipFont, bold: true, color: INK },
         link: { fontSize: 8.5, color: BLUE, decoration: 'underline', margin: [0, 0, 0, 3] },
         footer: { fontSize: 7.5, color: GRAY },
       },
