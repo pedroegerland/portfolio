@@ -96,14 +96,14 @@ window.PORTFOLIO = {
       shots: [
         { src: 'assets/projects/atelie_home.jpg', alt: { pt: 'Home do catálogo com hero e grade de produtos', en: 'Catalog home with hero and product grid' } },
         { src: 'assets/projects/atelie_produto.jpg', alt: { pt: 'Página de produto com specs, galeria e CTA de WhatsApp', en: 'Product page with specs, gallery and WhatsApp CTA' } },
-        { src: 'assets/projects/atelie_busca.jpg', alt: { pt: 'Busca com sinônimos: "backpack" encontra mochila', en: 'Synonym search: "backpack" finds the "mochila" products' } },
+        { src: 'assets/projects/atelie_busca.jpg', alt: { pt: 'Busca com sinônimos: "backpack" encontra mochila', en: 'Synonym search: typing "backpack" finds "mochila" (Portuguese for backpack)' } },
         { src: 'assets/projects/atelie_mobile_home.jpg', alt: { pt: 'Versão mobile da home', en: 'Mobile home' } },
         { src: 'assets/projects/atelie_mobile_produto.jpg', alt: { pt: 'Versão mobile do produto', en: 'Mobile product page' } },
-        { src: 'assets/projects/atelie_404.jpg', alt: { pt: 'Página 404 com a identidade do ateliê', en: '404 page in the atelier identity' } },
+        { src: 'assets/projects/atelie_404.jpg', alt: { pt: 'Página 404 com a identidade do ateliê', en: '404 page using the studio\'s visual identity' } },
       ],
       desc: {
         pt: 'Catálogo online de um ateliê de peças feitas à mão e personalizadas (bolsas, necessaires, mochilas). Reescrito de Flutter para um monólito Go + React: um único binário serve a API JSON e o frontend compilado.',
-        en: 'Online catalog for a handmade, made-to-order atelier (bags, pouches, backpacks). Rewritten from Flutter into a Go + React monolith: one binary serves the JSON API and the compiled frontend.',
+        en: 'Online catalog for a handmade, made-to-order sewing studio (bags, pouches, backpacks). Rewritten from Flutter into a Go + React monolith: one binary serves the JSON API and the compiled frontend.',
       },
       points: {
         pt: [
@@ -139,7 +139,7 @@ window.PORTFOLIO = {
       ],
       desc: {
         pt: 'Site imobiliário completo com área pública e painel do corretor, construído em AWS Serverless. Dezessete Lambdas em Go cobrem imóveis, upload de fotos via URL pré-assinada, aprovação de usuários e sincronização de dados do corretor.',
-        en: 'Full real-estate website with a public area and a realtor dashboard, built on AWS Serverless. Seventeen Go Lambdas cover listings, presigned-URL photo uploads, user approval and realtor data sync.',
+        en: 'Full website for a real-estate agency, with a public listings area and a realtor dashboard, built on AWS Serverless. Seventeen Go Lambdas cover listings, presigned-URL photo uploads, user approval and realtor data sync.',
       },
       points: {
         pt: [
