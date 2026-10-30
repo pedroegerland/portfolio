@@ -66,8 +66,8 @@
       { text: text.toUpperCase(), style: 'h2' },
       { canvas: [{ type: 'line', x1: 0, y1: 0, x2: width, y2: 0, lineWidth: 1.2, lineColor: LINE }], margin: [0, 2, 0, 8] },
     ];
-    const divider = (width) => ({ canvas: [{ type: 'line', x1: 0, y1: 0, x2: width, y2: 0, lineWidth: 0.5, lineColor: '#c9ced8', dash: { length: 2, space: 2 } }], margin: [0, 6, 0, 6] });
-    const spacer = () => ({ text: '', margin: [0, 5] });
+    const divider = (width) => ({ canvas: [{ type: 'line', x1: 0, y1: 0, x2: width, y2: 0, lineWidth: 0.5, lineColor: '#c9ced8', dash: { length: 2, space: 2 } }], margin: [0, 4, 0, 4] });
+    const spacer = () => ({ text: '', margin: [0, 4] });
     const bullets = (items) => ({ ul: items.map((text) => ({ text, style: 'body' })), markerColor: BLUE, margin: [0, 2, 0, 0] });
 
     const contact = [profile.email, profile.linkedin, profile.github, profile.site, profile.phone]
@@ -93,25 +93,16 @@
     const experience = [...heading(t('cv.experience'), leftWidth)];
     DATA.experience.forEach((x, i) => {
       if (i > 0) experience.push(divider(leftWidth));
-      experience.push(
-        { text: pick(x.role), style: 'h3' },
-        { text: pick(x.company), style: 'company' },
-        { text: `${period(x.start, x.end)}   ·   ${pick(x.location)}`, style: 'meta' },
-        bullets(list(x.points)),
-        { text: [{ text: `${t('cv.stack')}: `, bold: true }, x.stack], style: 'stack' },
-      );
-    });
-
-    const projects = [...heading(t('cv.projects'), leftWidth)];
-    DATA.projects.forEach((p, i) => {
-      if (i > 0) projects.push(divider(leftWidth));
-      projects.push(
-        { text: [{ text: p.name, style: 'h3' }, { text: `   ${t(`labels.status.${p.status}`).toUpperCase()}`, style: 'badge' }] },
-        { text: pick(p.desc), style: 'body', margin: [0, 2, 0, 0] },
-        bullets(list(p.points).slice(0, 1)),
-        { text: p.tags.join(' · '), style: 'stack' },
-      );
-      if (p.repo && !p.repoPrivate) projects.push({ text: p.repo, link: p.repo, style: 'link' });
+      experience.push({
+        unbreakable: true,
+        stack: [
+          { text: pick(x.role), style: 'h3' },
+          { text: pick(x.company), style: 'company' },
+          { text: `${period(x.start, x.end)}   ·   ${pick(x.location)}`, style: 'meta' },
+          bullets(list(x.points)),
+          { text: [{ text: `${t('cv.stack')}: `, bold: true }, x.stack], style: 'stack' },
+        ],
+      });
     });
 
     const education = [
@@ -148,7 +139,7 @@
       header,
       {
         columns: [
-          { width: leftWidth, stack: [...summary, spacer(), ...experience, spacer(), ...projects] },
+          { width: leftWidth, stack: [...summary, spacer(), ...experience] },
           { width: rightWidth, stack: [...skills, spacer(), ...education, spacer(), ...languages, spacer(), ...goals, spacer(), ...links] },
         ],
         columnGap: gap,
@@ -157,7 +148,7 @@
 
     return {
       pageSize,
-      pageMargins: [margin, margin, margin, 44],
+      pageMargins: [margin, margin, margin, 40],
       info: { title: `${profile.name} — ${lang === 'en' ? 'Résumé' : 'Currículo'}`, author: profile.name, subject: pick(profile.title), language: lang === 'en' ? 'en' : 'pt-BR' },
       background: (page, size) => (page === 1 ? { canvas: [{ type: 'rect', x: 0, y: 0, w: size.width, h: bandHeight, color: NAVY }] } : null),
       footer: (page, pages) => ({
@@ -172,14 +163,13 @@
         name: { fontSize: 22, bold: true, color: '#ffffff', characterSpacing: 0.5 },
         title: { fontSize: 10.5, bold: true, color: '#ffffff', margin: [0, 4, 0, 6] },
         contact: { fontSize: 8.5, color: '#e3e7f2', margin: [0, 0, 0, 2] },
-        h2: { fontSize: 11, bold: true, color: INK, characterSpacing: 0.6, margin: [0, 10, 0, 0] },
+        h2: { fontSize: 11, bold: true, color: INK, characterSpacing: 0.6, margin: [0, 8, 0, 0] },
         h3: { fontSize: 10.5, bold: true, color: INK },
         h4: { fontSize: 9, bold: true, color: INK },
         company: { fontSize: 10, bold: true, color: BLUE, margin: [0, 1, 0, 0] },
-        meta: { fontSize: 8.5, color: GRAY, margin: [0, 1, 0, 2] },
-        body: { fontSize: 8.8, color: INK, lineHeight: 1.2 },
-        stack: { fontSize: 8, color: GRAY, margin: [0, 4, 0, 0] },
-        badge: { fontSize: 7, color: GRAY, characterSpacing: 0.6 },
+        meta: { fontSize: 8.3, color: GRAY, margin: [0, 1, 0, 1] },
+        body: { fontSize: 8.6, color: INK, lineHeight: 1.18 },
+        stack: { fontSize: 7.8, color: GRAY, margin: [0, 3, 0, 0] },
         skillTitle: { fontSize: 9, bold: true, color: BLUE, margin: [0, 4, 0, 1] },
         skillItems: { fontSize: 8.5, color: INK, lineHeight: 1.25, margin: [0, 0, 0, 4] },
         link: { fontSize: 8.5, color: BLUE, decoration: 'underline', margin: [0, 0, 0, 3] },
