@@ -54,8 +54,8 @@
     const period = (start, end) => `${fmt(start)} – ${end ? fmt(end) : t('labels.current')}`;
     const profile = DATA.profile;
 
-    const pageSize = lang === 'en' ? 'LETTER' : 'A4';
-    const pageWidth = pageSize === 'LETTER' ? 612 : 595.28;
+    const pageSize = 'A4';
+    const pageWidth = 595.28;
     const margin = 36;
     const bandHeight = 112;
     const rightWidth = 168;
