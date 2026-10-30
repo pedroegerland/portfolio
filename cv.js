@@ -86,12 +86,13 @@
 
     const summary = [
       ...heading(t('cv.summary'), leftWidth),
-      { text: t('about.p1'), style: 'body' },
-      { text: t('about.p2'), style: 'body', margin: [0, 4, 0, 0] },
+      { text: pick(profile.summary) || `${t('about.p1')} ${t('about.p2')}`, style: 'body' },
     ];
 
     const experience = [...heading(t('cv.experience'), leftWidth)];
-    DATA.experience.forEach((x, i) => {
+    const full = DATA.experience.filter((x) => !x.brief);
+    const brief = DATA.experience.filter((x) => x.brief);
+    full.forEach((x, i) => {
       if (i > 0) experience.push(divider(leftWidth));
       experience.push({
         unbreakable: true,
@@ -104,6 +105,20 @@
         ],
       });
     });
+    if (brief.length) {
+      experience.push(divider(leftWidth), { text: t('cv.earlier'), style: 'h3', margin: [0, 0, 0, 4] });
+      brief.forEach((x) => {
+        experience.push({
+          text: [
+            { text: pick(x.role), bold: true },
+            { text: `, ${pick(x.company)} (${period(x.start, x.end)}) — `, color: GRAY },
+            { text: list(x.points).join(' ') },
+          ],
+          style: 'body',
+          margin: [0, 0, 0, 4],
+        });
+      });
+    }
 
     const education = [
       ...heading(t('cv.education'), rightWidth),
