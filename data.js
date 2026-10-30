@@ -7,6 +7,13 @@ window.PORTFOLIO = {
       'hero.eyebrow': 'Senior Software Engineer · Jundiaí, SP · Remoto',
       'hero.lead': 'Construo backends escaláveis em Go e Node.js, com AWS, Kubernetes e mensageria — e gosto de levar o produto até a tela, seja em React, Flutter ou um jogo.',
       'hero.cta': 'Ver projetos',
+      'hero.cv': 'Baixar currículo (PDF)', 'cv.generating': 'Gerando PDF…', 'cv.error': 'Não foi possível gerar o PDF. Verifique a conexão e tente de novo.',
+      'cv.filename': 'Pedro_Egerland_Curriculo_PT.pdf',
+      'cv.summary': 'Resumo', 'cv.experience': 'Experiência profissional', 'cv.projects': 'Projetos selecionados', 'cv.education': 'Formação',
+      'cv.languages': 'Idiomas', 'cv.skills': 'Competências', 'cv.goals': 'Objetivos', 'cv.links': 'Links', 'cv.stack': 'Stack',
+      'cv.footer': 'Gerado a partir de pedroegerland.github.io/portfolio em',
+      'aria.sections': 'Seções', 'aria.language': 'Idioma / Language', 'aria.close': 'Fechar',
+      'meta.description': 'Portfólio de Pedro Egerland — engenheiro de software sênior (Go, Node.js, React, AWS, Kubernetes). Projetos, experiência e contato.',
       'stats.years': '7+ anos', 'stats.yearsLabel': 'em tecnologia',
       'stats.go': '5+ anos', 'stats.goLabel': 'com Go em produção',
       'stats.domains': 'Fintech', 'stats.domainsLabel': 'crédito, pagamentos, banking',
@@ -33,6 +40,13 @@ window.PORTFOLIO = {
       'hero.eyebrow': 'Senior Software Engineer · Jundiaí, SP, Brazil · Remote',
       'hero.lead': 'I build scalable backends in Go and Node.js on AWS, Kubernetes and message brokers — and I like taking the product all the way to the screen, whether in React, Flutter or a game.',
       'hero.cta': 'See projects',
+      'hero.cv': 'Download résumé (PDF)', 'cv.generating': 'Generating PDF…', 'cv.error': 'Could not generate the PDF. Check your connection and try again.',
+      'cv.filename': 'Pedro_Egerland_Resume_EN.pdf',
+      'cv.summary': 'Summary', 'cv.experience': 'Professional experience', 'cv.projects': 'Selected projects', 'cv.education': 'Education',
+      'cv.languages': 'Languages', 'cv.skills': 'Skills', 'cv.goals': 'Goals', 'cv.links': 'Links', 'cv.stack': 'Stack',
+      'cv.footer': 'Generated from pedroegerland.github.io/portfolio on',
+      'aria.sections': 'Sections', 'aria.language': 'Language / Idioma', 'aria.close': 'Close',
+      'meta.description': 'Portfolio of Pedro Egerland — Senior Software Engineer (Go, Node.js, React, AWS, Kubernetes). Projects, experience and contact.',
       'stats.years': '7+ years', 'stats.yearsLabel': 'in tech',
       'stats.go': '5+ years', 'stats.goLabel': 'shipping Go to production',
       'stats.domains': 'Fintech', 'stats.domainsLabel': 'credit, payments, banking',
@@ -55,6 +69,22 @@ window.PORTFOLIO = {
     },
   },
 
+  /* Identity used by the generated résumé (cv.js). Leave phone empty to keep it off the PDF. */
+  profile: {
+    name: 'Pedro Egerland',
+    title: { pt: 'Senior Software Engineer · Backend (Go e Node.js) com atuação full stack', en: 'Senior Software Engineer · Backend (Go, Node.js) with full-stack delivery' },
+    location: { pt: 'Jundiaí, SP — Brasil · Remoto ou híbrido em São Paulo', en: 'Jundiaí, São Paulo, Brazil · Open to remote' },
+    email: 'pedro.egerland94@gmail.com',
+    phone: '',
+    site: 'pedroegerland.github.io/portfolio',
+    linkedin: 'linkedin.com/in/pedroegerland',
+    github: 'github.com/pedroegerland',
+  },
+  months: {
+    pt: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+    en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  },
+
   projects: [
     {
       id: 'karenclementeatelie',
@@ -66,7 +96,7 @@ window.PORTFOLIO = {
       shots: [
         { src: 'assets/projects/atelie_home.jpg', alt: { pt: 'Home do catálogo com hero e grade de produtos', en: 'Catalog home with hero and product grid' } },
         { src: 'assets/projects/atelie_produto.jpg', alt: { pt: 'Página de produto com specs, galeria e CTA de WhatsApp', en: 'Product page with specs, gallery and WhatsApp CTA' } },
-        { src: 'assets/projects/atelie_busca.jpg', alt: { pt: 'Busca com sinônimos: "backpack" encontra mochila', en: 'Synonym search: "backpack" finds the mochila' } },
+        { src: 'assets/projects/atelie_busca.jpg', alt: { pt: 'Busca com sinônimos: "backpack" encontra mochila', en: 'Synonym search: "backpack" finds the "mochila" products' } },
         { src: 'assets/projects/atelie_mobile_home.jpg', alt: { pt: 'Versão mobile da home', en: 'Mobile home' } },
         { src: 'assets/projects/atelie_mobile_produto.jpg', alt: { pt: 'Versão mobile do produto', en: 'Mobile product page' } },
         { src: 'assets/projects/atelie_404.jpg', alt: { pt: 'Página 404 com a identidade do ateliê', en: '404 page in the atelier identity' } },
@@ -241,18 +271,18 @@ window.PORTFOLIO = {
   ],
 
   skills: [
-    { title: { pt: 'Backend', en: 'Backend' }, items: ['Go', 'Node.js', 'TypeScript', 'GraphQL', 'REST / Swagger', 'gRPC', 'Arquitetura hexagonal'] },
+    { title: { pt: 'Backend', en: 'Backend' }, items: ['Go', 'Node.js', 'TypeScript', 'GraphQL', 'REST / Swagger', 'gRPC', { pt: 'Arquitetura hexagonal', en: 'Hexagonal architecture' }] },
     { title: { pt: 'Cloud & Infra', en: 'Cloud & Infra' }, items: ['AWS (Lambda, SQS/SNS, Step Functions, DynamoDB, S3, Cognito)', 'Kubernetes', 'Docker', 'Terraform', 'AWS CDK / SAM', 'Serverless', 'Datadog', 'GitHub Actions'] },
     { title: { pt: 'Dados & Mensageria', en: 'Data & Messaging' }, items: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Redis', 'Kafka', 'RabbitMQ', 'ElasticSearch', 'Firestore'] },
-    { title: { pt: 'Frontend & Mobile', en: 'Frontend & Mobile' }, items: ['React', 'Tailwind CSS', 'Vite', 'Flutter', 'React Native / Expo', 'Kotlin & Swift (módulos nativos)'] },
-    { title: { pt: 'Games & 3D', en: 'Games & 3D' }, items: ['Unreal Engine (C++ / Blueprint)', 'Unity (C#)', 'Rigging de personagens'] },
-    { title: { pt: 'Práticas', en: 'Practices' }, items: ['Refatoração de legado', 'Migrações sem downtime', 'Testes (unit, httptest, fakes)', 'Documentação técnica', 'Code review', 'Trabalho com produto'] },
+    { title: { pt: 'Frontend & Mobile', en: 'Frontend & Mobile' }, items: ['React', 'Tailwind CSS', 'Vite', 'Flutter', 'React Native / Expo', { pt: 'Kotlin & Swift (módulos nativos)', en: 'Kotlin & Swift (native modules)' }] },
+    { title: { pt: 'Games & 3D', en: 'Games & 3D' }, items: ['Unreal Engine (C++ / Blueprint)', 'Unity (C#)', { pt: 'Rigging de personagens', en: 'Character rigging' }] },
+    { title: { pt: 'Práticas', en: 'Practices' }, items: [{ pt: 'Refatoração de legado', en: 'Legacy refactoring' }, { pt: 'Migrações sem downtime', en: 'Zero-downtime migrations' }, { pt: 'Testes (unit, httptest, fakes)', en: 'Testing (unit, httptest, fakes)' }, { pt: 'Documentação técnica', en: 'Technical documentation' }, 'Code review', { pt: 'Trabalho com produto', en: 'Product collaboration' }] },
   ],
 
   education: [
-    { title: { pt: 'Tecnólogo em Análise e Desenvolvimento de Sistemas', en: 'Associate Degree in Systems Analysis and Development' }, school: 'Universidade Anhembi Morumbi (Laureate)', year: '2022' },
-    { title: { pt: 'Programação para Unreal Engine 4', en: 'Game Programming for Unreal Engine 4' }, school: 'Axis — Escola de Arte e Efeitos Visuais', year: '2018' },
-    { title: { pt: 'Personagem 3D', en: '3D Character' }, school: 'Axis — Escola de Arte e Efeitos Visuais', year: '2019' },
+    { title: { pt: 'Tecnólogo em Análise e Desenvolvimento de Sistemas', en: 'Associate Degree in Systems Analysis and Development' }, school: { pt: 'Universidade Anhembi Morumbi (Laureate)', en: 'Anhembi Morumbi University (Laureate)' }, year: '2022' },
+    { title: { pt: 'Programação para Unreal Engine 4', en: 'Game Programming for Unreal Engine 4' }, school: { pt: 'Axis — Escola de Arte e Efeitos Visuais', en: 'Axis — School of Art and Visual Effects' }, year: '2018' },
+    { title: { pt: 'Personagem 3D', en: '3D Character' }, school: { pt: 'Axis — Escola de Arte e Efeitos Visuais', en: 'Axis — School of Art and Visual Effects' }, year: '2019' },
   ],
 
   languages: [

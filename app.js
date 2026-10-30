@@ -1,10 +1,7 @@
 (function () {
   const DATA = window.PORTFOLIO;
   const SUPPORTED = ['pt', 'en'];
-  const MONTHS = {
-    pt: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
-    en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  };
+  const MONTHS = DATA.months;
 
   function detectLang() {
     const fromQuery = new URLSearchParams(location.search).get('lang');
@@ -113,14 +110,14 @@
     DATA.skills.forEach((group) => {
       root.append(el('div', { class: 'skill' }, [
         el('h3', { text: pick(lang, group.title) }),
-        el('div', { class: 'tags' }, group.items.map((item) => el('span', { class: 'tag', text: item }))),
+        el('div', { class: 'tags' }, group.items.map((item) => el('span', { class: 'tag', text: pick(lang, item) }))),
       ]));
     });
   }
 
   function renderLists(lang) {
     const edu = document.getElementById('education-list');
-    edu.replaceChildren(...DATA.education.map((e) => el('li', {}, [el('strong', { text: pick(lang, e.title) }), el('span', { text: `${e.school} · ${e.year}` })])));
+    edu.replaceChildren(...DATA.education.map((e) => el('li', {}, [el('strong', { text: pick(lang, e.title) }), el('span', { text: `${pick(lang, e.school)} · ${e.year}` })])));
     const langs = document.getElementById('languages-list');
     langs.replaceChildren(...DATA.languages.map((l) => el('li', {}, [el('strong', { text: pick(lang, l.name) }), el('span', { text: pick(lang, l.level) })])));
     const goals = document.getElementById('goals-list');
@@ -131,11 +128,21 @@
     document.querySelectorAll('[data-i18n]').forEach((node) => {
       node.textContent = t(lang, node.getAttribute('data-i18n'));
     });
+    document.querySelectorAll('[data-i18n-aria]').forEach((node) => {
+      node.setAttribute('aria-label', t(lang, node.getAttribute('data-i18n-aria')));
+    });
+    document.querySelectorAll('[data-cv]').forEach((node) => {
+      if (!node.disabled) node.textContent = `${t(lang, 'hero.cv')} ↓`;
+    });
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', t(lang, 'meta.description'));
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   }
 
+  let currentLang = 'pt';
   function setLang(lang, persist = true) {
+    currentLang = lang;
     applyStatic(lang);
     renderProjects(lang);
     renderExperience(lang);
@@ -166,6 +173,21 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
 
   document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+  // Résumé: generated on the fly from DATA in the active language (see cv.js).
+  document.querySelectorAll('[data-cv]').forEach((btn) => btn.addEventListener('click', async () => {
+    const lang = currentLang;
+    const buttons = [...document.querySelectorAll('[data-cv]')];
+    buttons.forEach((b) => { b.disabled = true; b.textContent = t(lang, 'cv.generating'); });
+    try {
+      await window.PortfolioCV.download(lang);
+    } catch (err) {
+      console.error(err);
+      alert(t(lang, 'cv.error'));
+    } finally {
+      buttons.forEach((b) => { b.disabled = false; b.textContent = `${t(currentLang, 'hero.cv')} ↓`; });
+    }
+  }));
   document.getElementById('year').textContent = new Date().getFullYear();
   setLang(detectLang(), false);
 })();

@@ -30,13 +30,13 @@
           <span class="brand__mark">PE</span>
           <span class="brand__name">Pedro Egerland</span>
         </a>
-        <nav class="nav__links" aria-label="Seções">
+        <nav class="nav__links" aria-label="Seções" data-i18n-aria="aria.sections">
           <a href="#projects" data-i18n="nav.projects">Projetos</a>
           <a href="#experience" data-i18n="nav.experience">Experiência</a>
           <a href="#skills" data-i18n="nav.skills">Habilidades</a>
           <a href="#contact" data-i18n="nav.contact">Contato</a>
         </nav>
-        <div class="lang" role="group" aria-label="Idioma / Language">
+        <div class="lang" role="group" aria-label="Idioma / Language" data-i18n-aria="aria.language">
           <button type="button" data-lang="pt" aria-pressed="true">PT</button>
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
@@ -56,6 +56,7 @@
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#projects" data-i18n="hero.cta">Ver projetos</a>
+          <button type="button" class="btn btn--ghost" data-cv>Baixar currículo (PDF) ↓</button>
           <a class="btn btn--ghost" href="https://github.com/pedroegerland" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/pedroegerland/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>
@@ -150,6 +151,7 @@
         </p>
         <div class="contact__links">
           <a class="btn btn--primary" href="mailto:pedro.egerland94@gmail.com">pedro.egerland94@gmail.com</a>
+          <button type="button" class="btn btn--ghost" data-cv>Baixar currículo (PDF) ↓</button>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/pedroegerland/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           <a class="btn btn--ghost" href="https://github.com/pedroegerland" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a class="btn btn--ghost" href="https://www.artstation.com/pedroegerland" target="_blank" rel="noreferrer">ArtStation ↗</a>
@@ -165,11 +167,12 @@
     </footer>
 
     <div class="lightbox" id="lightbox" hidden>
-      <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
+      <button type="button" class="lightbox__close" aria-label="Fechar" data-i18n-aria="aria.close">×</button>
       <img alt="" />
     </div>
 
     <script src="data.js"></script>
+    <script src="cv.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

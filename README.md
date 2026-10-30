@@ -14,6 +14,9 @@ Published at **https://pedroegerland.github.io/portfolio/** through GitHub Pages
   fields; `app.js` renders it and switches language.
 - Capturas de tela em [`assets/projects/`](assets/projects/) foram tiradas das aplicações rodando localmente. / Screenshots
   were taken from the applications running locally.
+- O botão "Baixar currículo" gera o PDF no navegador, na hora, a partir de `data.js` e no idioma ativo ([`cv.js`](cv.js), com
+  [pdfmake](https://pdfmake.github.io/docs/) carregado sob demanda). Atualizar o site atualiza o currículo. / The résumé button
+  builds the PDF in the browser from `data.js` in the active language (`cv.js` + pdfmake, loaded on demand), so the site is the single source of truth.
 - Deploy automático pelo workflow [`pages.yml`](.github/workflows/pages.yml) a cada push em `main`. / Deployed automatically
   on every push to `main`.
 
