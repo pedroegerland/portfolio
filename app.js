@@ -115,6 +115,13 @@
     });
   }
 
+  function renderImpact(lang) {
+    const root = document.getElementById('impact-list');
+    const items = (DATA.impact && (DATA.impact[lang] || DATA.impact.pt)) || [];
+    root.replaceChildren(...items.map((text) => el('li', { text })));
+    root.closest('section').hidden = items.length === 0;
+  }
+
   function renderLists(lang) {
     const edu = document.getElementById('education-list');
     edu.replaceChildren(...DATA.education.map((e) => el('li', {}, [el('strong', { text: pick(lang, e.title) }), el('span', { text: `${pick(lang, e.school)} · ${e.year}` })])));
@@ -122,6 +129,8 @@
     langs.replaceChildren(...DATA.languages.map((l) => el('li', {}, [el('strong', { text: pick(lang, l.name) }), el('span', { text: pick(lang, l.level) })])));
     const goals = document.getElementById('goals-list');
     goals.replaceChildren(...(DATA.goals[lang] || DATA.goals.pt).map((g) => el('li', {}, [el('strong', { text: g })])));
+    // Goals read as filler to North American recruiters; keep the block for the Brazilian page only.
+    document.getElementById('goals-block').hidden = lang === 'en';
   }
 
   function applyStatic(lang) {
@@ -134,8 +143,12 @@
     document.querySelectorAll('[data-cv]').forEach((node) => {
       if (!node.disabled) node.textContent = `${t(lang, 'hero.cv')} ↓`;
     });
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', t(lang, 'meta.description'));
+    const setMeta = (selector, value) => { const node = document.querySelector(selector); if (node) node.setAttribute('content', value); };
+    setMeta('meta[name="description"]', t(lang, 'meta.description'));
+    setMeta('meta[property="og:title"]', t(lang, 'meta.ogTitle'));
+    setMeta('meta[property="og:description"]', t(lang, 'meta.description'));
+    setMeta('meta[property="og:locale"]', lang === 'pt' ? 'pt_BR' : 'en_US');
+    setMeta('meta[property="og:locale:alternate"]', lang === 'pt' ? 'en_US' : 'pt_BR');
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   }
@@ -145,6 +158,7 @@
     currentLang = lang;
     applyStatic(lang);
     renderProjects(lang);
+    renderImpact(lang);
     renderExperience(lang);
     renderSkills(lang);
     renderLists(lang);

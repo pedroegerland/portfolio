@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0b0e14" />
-    <title>Pedro Egerland · Senior Software Engineer</title>
+    <title>Pedro Egerland · Senior Software Engineer · Backend · Go, Node.js, TypeScript, AWS · Fintech</title>
     <meta name="description" content="Portfólio de Pedro Egerland — engenheiro de software sênior (Go, Node.js, React, AWS, Kubernetes). Projetos, experiência e contato. / Portfolio of Pedro Egerland — Senior Software Engineer." />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pedro Egerland · Senior Software Engineer" />
-    <meta property="og:description" content="Go · Node.js · React · AWS · Kubernetes. Projetos e experiência." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Pedro Egerland · Senior Software Engineer · Backend · Go, Node.js, TypeScript, AWS · Fintech" />
+    <meta property="og:description" content="Pedro Egerland — Senior Software Engineer · Backend · Go, Node.js, TypeScript, AWS · Fintech. Crédito, pagamentos, KYC e integrações bancárias." />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:url" content="https://pedroegerland.github.io/portfolio/" />
     <meta property="og:image" content="https://pedroegerland.github.io/portfolio/assets/projects/atelie_home.jpg" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -20,6 +22,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pedro Egerland",
+        "jobTitle": "Senior Software Engineer · Backend · Go, Node.js, TypeScript, AWS · Fintech",
+        "worksFor": { "@type": "Organization", "name": "Cadopay" },
+        "url": "https://pedroegerland.github.io/portfolio/",
+        "email": "mailto:pedro.egerland94@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Jundiaí", "addressRegion": "SP", "addressCountry": "BR" },
+        "knowsAbout": ["Go", "Node.js", "TypeScript", "AWS", "Kubernetes", "PostgreSQL", "Fintech", "Credit", "Payments", "KYC"],
+        "sameAs": ["https://www.linkedin.com/in/pedroegerland/", "https://github.com/pedroegerland"]
+      }
+    </script>
   </head>
   <body>
     <a class="skip" href="#projects" data-i18n="skip">Pular para os projetos</a>
@@ -36,6 +52,7 @@
           <a href="#skills" data-i18n="nav.skills">Habilidades</a>
           <a href="#contact" data-i18n="nav.contact">Contato</a>
         </nav>
+        <button type="button" class="btn btn--primary btn--sm nav__cta" data-cv>Baixar currículo (PDF) ↓</button>
         <div class="lang" role="group" aria-label="Idioma / Language" data-i18n-aria="aria.language">
           <button type="button" data-lang="pt" aria-pressed="true">PT</button>
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -46,17 +63,18 @@
     <main id="top">
       <!-- Hero -->
       <section class="hero container">
-        <p class="eyebrow mono" data-i18n="hero.eyebrow">Senior Software Engineer · Jundiaí, SP · Remoto</p>
+        <p class="eyebrow mono" data-i18n="hero.eyebrow">Senior Software Engineer · Backend · Go, Node.js, TypeScript, AWS · Fintech</p>
         <h1 class="hero__title">
           Pedro <span class="accent">Egerland</span>
         </h1>
+        <p class="hero__meta mono" data-i18n="hero.meta">Jundiaí, SP · Remoto ou híbrido em São Paulo · Inglês avançado</p>
         <p class="hero__lead" data-i18n="hero.lead">
           Construo backends escaláveis em Go e Node.js, com AWS, Kubernetes e mensageria — e gosto de levar o
           produto até a tela, seja em React, Flutter ou um jogo.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#projects" data-i18n="hero.cta">Ver projetos</a>
-          <button type="button" class="btn btn--ghost" data-cv>Baixar currículo (PDF) ↓</button>
+          <button type="button" class="btn btn--primary" data-cv>Baixar currículo (PDF) ↓</button>
+          <a class="btn btn--ghost" href="#projects" data-i18n="hero.cta">Ver projetos</a>
           <a class="btn btn--ghost" href="https://github.com/pedroegerland" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/pedroegerland/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>
@@ -66,6 +84,15 @@
           <div><dt data-i18n="stats.domains">Fintech</dt><dd data-i18n="stats.domainsLabel">crédito, pagamentos, banking</dd></div>
           <div><dt data-i18n="stats.goal">Principal</dt><dd data-i18n="stats.goalLabel">Engineer é o próximo passo</dd></div>
         </dl>
+      </section>
+
+      <!-- Selected impact -->
+      <section class="section container" id="impact">
+        <div class="section__head">
+          <p class="eyebrow mono" data-i18n="impact.eyebrow">Impacto selecionado</p>
+          <h2 data-i18n="impact.title">Resultados que carrego de projeto em projeto</h2>
+        </div>
+        <ol id="impact-list" class="impact"></ol>
       </section>
 
       <!-- About -->
@@ -135,8 +162,10 @@
             <p class="eyebrow mono" data-i18n="languages.eyebrow">Idiomas</p>
             <h2 data-i18n="languages.title">Idiomas</h2>
             <ul id="languages-list" class="edu__list"></ul>
-            <p class="eyebrow mono" style="margin-top: 2.5rem" data-i18n="goals.eyebrow">Objetivos</p>
-            <ul id="goals-list" class="edu__list"></ul>
+            <div id="goals-block">
+              <p class="eyebrow mono" style="margin-top: 2.5rem" data-i18n="goals.eyebrow">Objetivos</p>
+              <ul id="goals-list" class="edu__list"></ul>
+            </div>
           </div>
         </div>
       </section>
