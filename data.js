@@ -287,8 +287,8 @@ window.PORTFOLIO = {
       tags: ['Go 1.27', 'CQRS', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'pdfmake', 'DynamoDB', 'AWS Lambda', 'CloudFront', 'AWS CDK (Go)', 'Docker'],
       shots: [],
       desc: {
-        pt: 'Control Plane whitelabel da EgerlandDev Solutions: vitrine dos 6 SaaS (AgendaMed, FonoReport AI, CantinaPay, MicroTrade Bot, ImobiDeck e LojaDeck), configurador de marca ao vivo, portal Meus Sites para clientes, calculadora comparativa, contrato em PDF client-side e fila administrativa protegida por login.',
-        en: 'White-label control plane for EgerlandDev Solutions: showcase of 6 SaaS products (AgendaMed, FonoReport AI, CantinaPay, MicroTrade Bot, ImobiDeck and LojaDeck), live brand configurator, My Sites client portal, market-compared pricing calculator, client-side PDF contract and login-protected admin queue.',
+        pt: 'Control Plane whitelabel da EgerlandDev Solutions: vitrine dos 6 SaaS (AgendaDeck, FonoReport AI, CantinaPay, MicroTrade Bot, ImobiDeck e LojaDeck), configurador de marca ao vivo, portal Meus Sites para clientes, calculadora comparativa, contrato em PDF client-side e fila administrativa protegida por login.',
+        en: 'White-label control plane for EgerlandDev Solutions: showcase of 6 SaaS products (AgendaDeck, FonoReport AI, CantinaPay, MicroTrade Bot, ImobiDeck and LojaDeck), live brand configurator, My Sites client portal, market-compared pricing calculator, client-side PDF contract and login-protected admin queue.',
       },
       points: {
         pt: [
