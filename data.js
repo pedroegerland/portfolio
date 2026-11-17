@@ -115,7 +115,7 @@ window.PORTFOLIO = {
       id: 'karenclementeatelie',
       name: 'Karen Clemente Ateliê',
       status: 'wip',
-      repo: 'https://github.com/pedroegerland/karenclementeatelie',
+      repo: 'https://github.com/pedroegerland/ecommerce',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'DynamoDB', 'S3 + CloudFront', 'AWS Lambda', 'AWS CDK (Go)', 'Docker', 'GitHub Actions'],
       shots: [
@@ -149,7 +149,7 @@ window.PORTFOLIO = {
       id: 'imobiliaria',
       name: 'Imobiliária Marques & Henriques',
       status: 'discontinued',
-      repo: 'https://github.com/pedroegerland/imobiliaria-marques-e-henriques',
+      repo: 'https://github.com/pedroegerland/real-estate',
       repoPrivate: true,
       tags: ['React 18', 'TypeScript', 'Tailwind', 'Vite', 'Go 1.27', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'Cognito', 'S3', 'AWS SAM', 'Vercel'],
       shots: [
@@ -226,6 +226,8 @@ window.PORTFOLIO = {
       id: 'aegiskids',
       name: 'AegisKids',
       status: 'wip',
+      repo: 'https://github.com/pedroegerland/aegiskids',
+      repoPrivate: true,
       tags: ['Go 1.27', 'chi', 'AWS Lambda', 'DynamoDB single-table', 'Cognito', 'API Gateway WebSocket', 'AWS CDK (Go)', 'React Native', 'Expo', 'TypeScript', 'Kotlin', 'Swift', 'pnpm workspaces'],
       shots: [
         { src: 'assets/projects/wmk_api_flow.jpg', fit: 'contain', alt: { pt: 'API real rodando local com DynamoDB Local: família, pareamento, dispositivo, localização, tempo de tela e bloqueio', en: 'Real API running locally on DynamoDB Local: family, pairing, device, location, screen time and block' } },
