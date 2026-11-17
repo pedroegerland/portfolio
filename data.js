@@ -113,7 +113,7 @@ window.PORTFOLIO = {
   projects: [
     {
       id: 'karenclementeatelie',
-      name: 'Karen Clemente Ateliê',
+      name: { pt: 'Ecommerce (Karen Clemente Ateliê)', en: 'Ecommerce (Karen Clemente Ateliê)' },
       status: 'wip',
       repo: 'https://github.com/pedroegerland/ecommerce',
       repoPrivate: true,
@@ -147,7 +147,7 @@ window.PORTFOLIO = {
     },
     {
       id: 'imobiliaria',
-      name: 'Imobiliária Marques & Henriques',
+      name: { pt: 'Real Estate (Imobiliária Marques & Henriques)', en: 'Real Estate (Marques & Henriques)' },
       status: 'discontinued',
       repo: 'https://github.com/pedroegerland/real-estate',
       repoPrivate: true,
@@ -249,6 +249,31 @@ window.PORTFOLIO = {
           'Hexagonal Go backend (domain → app → infra/transport) on Lambda + API Gateway, DynamoDB single-table with a GSI, and domain/use-case tests with fakes.',
           'Native modules: Kotlin (Device Admin, Accessibility, UsageStats, MediaProjection) and Swift (Family Controls, DeviceActivityMonitor).',
           'Realtime channel over API Gateway WebSocket (no FCM/Firebase: the child app holds the socket from its foreground service) and infrastructure with AWS CDK in Go (auth, data, realtime, API). No capturable UI yet — the images show the API answering for real on DynamoDB Local and the test suite.',
+        ],
+      },
+    },
+    {
+      id: 'wager-core',
+      name: { pt: 'Wager Core', en: 'Wager Core' },
+      status: 'done',
+      repo: 'https://github.com/pedroegerland/wager-core',
+      repoPrivate: true,
+      tags: ['Go 1.27', 'Uber Fx', 'PostgreSQL', 'pgx', 'SQS', 'CQRS', 'Outbox / Inbox', 'OIDC', 'Prometheus', 'Docker'],
+      shots: [],
+      desc: {
+        pt: 'Serviço de carteira digital e apostas em Go com arquitetura hexagonal, CQRS em carteiras/transações, processamento assíncrono via SQS e garantia transacional com Inbox/Outbox.',
+        en: 'Wallet and wagering service in Go with hexagonal architecture, CQRS for wallet commands/queries, async SQS processing and transactional Inbox/Outbox.',
+      },
+      points: {
+        pt: [
+          'Injeção de dependências modular com Uber Fx, Unit of Work em PostgreSQL (pgx) e isolamento de leituras snapshot (CQRS) em internal/app/wallets.',
+          'Inbox/Outbox transacional com worker de publicação para SQS, retrier de referências pendentes e reconciliação de saldo vs ledger.',
+          'Autenticação OIDC (Keycloak), rate limiting por sujeito, métricas Prometheus e suíte de testes unitários e de integração.',
+        ],
+        en: [
+          'Modular dependency injection with Uber Fx, PostgreSQL Unit of Work (pgx) and snapshot read isolation (CQRS) in internal/app/wallets.',
+          'Transactional Inbox/Outbox with SQS publisher worker, pending-reference retrier and wallet-vs-ledger reconciliation.',
+          'OIDC authentication (Keycloak), per-subject rate limiting, Prometheus metrics and unit + integration test suites.',
         ],
       },
     },

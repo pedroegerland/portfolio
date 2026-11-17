@@ -72,7 +72,7 @@
 
       const body = el('div', { class: 'project__body' }, [
         el('div', { class: 'project__top' }, [
-          el('h3', { text: p.name }),
+          el('h3', { text: pick(lang, p.name) }),
           el('span', { class: `badge badge--${p.status}`, text: t(lang, `labels.status.${p.status}`) }),
         ]),
         el('p', { class: 'project__desc', text: pick(lang, p.desc) }),
