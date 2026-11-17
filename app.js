@@ -41,26 +41,30 @@
     root.replaceChildren();
     DATA.projects.forEach((p) => {
       const shots = p.shots || [];
-      const main = el('figure', { class: `project__shot ${shots[0].fit === 'contain' ? 'project__shot--contain' : ''}` }, [
-        el('img', { src: shots[0].src, alt: pick(lang, shots[0].alt), loading: 'eager', decoding: 'async' }),
-      ]);
-      const caption = el('p', { class: 'project__caption', text: pick(lang, shots[0].alt) });
-      const thumbs = el('div', { class: 'project__thumbs', role: 'tablist' });
-      shots.forEach((s, i) => {
-        const btn = el('button', { type: 'button', 'aria-current': i === 0, 'aria-label': pick(lang, s.alt) }, [
-          el('img', { src: s.src, alt: '', loading: 'lazy' }),
+      let media = null;
+      if (shots.length > 0) {
+        const main = el('figure', { class: `project__shot ${shots[0].fit === 'contain' ? 'project__shot--contain' : ''}` }, [
+          el('img', { src: shots[0].src, alt: pick(lang, shots[0].alt), loading: 'eager', decoding: 'async' }),
         ]);
-        btn.addEventListener('click', () => {
-          const img = main.querySelector('img');
-          img.src = s.src;
-          img.alt = pick(lang, s.alt);
-          caption.textContent = pick(lang, s.alt);
-          main.classList.toggle('project__shot--contain', s.fit === 'contain');
-          thumbs.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', b === btn));
+        const caption = el('p', { class: 'project__caption', text: pick(lang, shots[0].alt) });
+        const thumbs = el('div', { class: 'project__thumbs', role: 'tablist' });
+        shots.forEach((s, i) => {
+          const btn = el('button', { type: 'button', 'aria-current': i === 0, 'aria-label': pick(lang, s.alt) }, [
+            el('img', { src: s.src, alt: '', loading: 'lazy' }),
+          ]);
+          btn.addEventListener('click', () => {
+            const img = main.querySelector('img');
+            img.src = s.src;
+            img.alt = pick(lang, s.alt);
+            caption.textContent = pick(lang, s.alt);
+            main.classList.toggle('project__shot--contain', s.fit === 'contain');
+            thumbs.querySelectorAll('button').forEach((b) => b.setAttribute('aria-current', b === btn));
+          });
+          thumbs.append(btn);
         });
-        thumbs.append(btn);
-      });
-      main.addEventListener('click', () => openLightbox(main.querySelector('img')));
+        main.addEventListener('click', () => openLightbox(main.querySelector('img')));
+        media = el('div', { class: 'project__media' }, [main, caption, shots.length > 1 ? thumbs : null]);
+      }
 
       const links = el('div', { class: 'project__links' });
       if (p.live) links.append(el('a', { class: 'btn btn--primary btn--sm', href: p.live, target: '_blank', rel: 'noreferrer', text: `${t(lang, 'labels.live')} ↗` }));
@@ -78,8 +82,8 @@
         p.repoPrivate ? el('p', { class: 'project__note', text: `// ${t(lang, 'labels.private')}` }) : null,
       ]);
 
-      root.append(el('article', { class: 'project', id: `project-${p.id}` }, [
-        el('div', { class: 'project__media' }, [main, caption, shots.length > 1 ? thumbs : null]),
+      root.append(el('article', { class: `project${media ? '' : ' project--no-media'}`, id: `project-${p.id}` }, [
+        media,
         body,
       ]));
     });

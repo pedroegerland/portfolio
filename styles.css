@@ -99,7 +99,7 @@ button.btn:disabled { opacity: .6; cursor: progress; transform: none; }
 /* Projects */
 .projects { display: grid; gap: 2.5rem; }
 .project { display: grid; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
-@media (min-width: 900px) { .project { grid-template-columns: 1.1fr 1fr; } .project__media { border-right: 1px solid var(--line); } }
+@media (min-width: 900px) { .project { grid-template-columns: 1.1fr 1fr; } .project--no-media { grid-template-columns: 1fr; } .project__media { border-right: 1px solid var(--line); } }
 .project__media { background: var(--surface-2); padding: 1.25rem; display: grid; gap: .75rem; align-content: start; }
 @media (min-width: 900px) { .project__media { padding: 1.5rem; } }
 .project__shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); aspect-ratio: 16 / 10; cursor: zoom-in; margin: 0; }
