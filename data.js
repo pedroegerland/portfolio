@@ -278,11 +278,9 @@ window.PORTFOLIO = {
   ],
 
   experience: [
-    {
-      role: { pt: 'Senior Software Engineer', en: 'Senior Software Engineer' }, company: { pt: 'Cadopay · SaaS de crédito B2B (white-label, multi-tenant)', en: 'Cadopay · B2B credit SaaS (white-label, multi-tenant)' }, location: { pt: 'Remoto', en: 'Remote' }, start: '2024-12', end: null,
+    { role: { pt: 'Senior Software Engineer', en: 'Senior Software Engineer' }, company: { pt: 'Cadopay · SaaS de crédito B2B (white-label, multi-tenant)', en: 'Cadopay · B2B credit SaaS (white-label, multi-tenant)' }, location: { pt: 'Remoto', en: 'Remote' }, start: '2024-12', end: null,
       stack: 'Node.js · TypeScript · AWS Lambda · Serverless · Step Functions · SQS/SNS · PostgreSQL · Redis · Docker · Next.js · React',
-      points: {
-        pt: [
+      points: { pt: [
           'Conduzo o onboarding e o ciclo de vida do cadastro num SaaS white-label multi-tenant de crédito B2B: elegibilidade, recadastro, auditoria e a máquina de estados orientada a eventos (Step Functions, SQS/SNS) por trás de cada registro.',
           'Opero a esteira de KYC (validação documental, biometria, quiz, SMS e checagem de titularidade) e ajusto a régua de tentativas por método, reduzindo o gasto com verificações que falham.',
           'Reduzi o custo por consulta a bureaus e aumentei a taxa de cadastro completo orquestrando bureaus em cascata com fallback por categoria, cache e normalização.',
@@ -297,14 +295,10 @@ window.PORTFOLIO = {
           'Build and maintain connectors for 10+ ERP systems on a shared base layer that standardizes authentication, field mapping and error handling.',
           'Migrated the credit engine with the team from hard-coded rules to configurable workflows, so each client runs its own policy without a deployment.',
           'Ship back-office, merchant and end-customer portal features in Next.js/React and work directly with clients on requirements, product specs and incident response.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Senior Software Engineer (Contrato)', en: 'Senior Software Engineer (Contract)' }, company: { pt: 'Trio', en: 'Trio' }, location: { pt: 'Remoto', en: 'Remote' }, start: '2025-04', end: '2025-12',
+        ] } },
+    { role: { pt: 'Senior Software Engineer (Contrato)', en: 'Senior Software Engineer (Contract)' }, company: { pt: 'Trio', en: 'Trio' }, location: { pt: 'Remoto', en: 'Remote' }, start: '2025-04', end: '2025-12',
       stack: 'Go · GraphQL · PostgreSQL · AWS · Terraform · Kubernetes · Docker',
-      points: {
-        pt: [
+      points: { pt: [
           'Retornei por contrato, em paralelo ao cargo fixo, à mesma plataforma de gestão patrimonial para cliente norte-americano do setor de aposentadoria.',
           'Evoluí as APIs que permitem a instituições financeiras lançar experiências de investimento personalizáveis, com segurança e engajamento do usuário como requisitos centrais.',
           'Entreguei funcionalidades como APIs autônomas e prontas para integração, encurtando o time to market e reduzindo o CAPEX do cliente final.',
@@ -313,28 +307,20 @@ window.PORTFOLIO = {
           'Returned on contract, alongside the full-time role, to the same wealth-management platform for a US client in the retirement sector.',
           'Extended the APIs that let financial institutions launch customizable investment experiences, with security and user engagement as the central requirements.',
           'Delivered features as self-contained, integration-ready APIs, shortening time to market and lowering the end client\'s capital expenditure.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Senior Software Engineer (Contrato)', en: 'Senior Software Engineer (Contract)' }, company: { pt: 'Trio', en: 'Trio' }, location: { pt: 'Remoto', en: 'Remote' }, start: '2024-11', end: '2025-01',
+        ] } },
+    { role: { pt: 'Senior Software Engineer (Contrato)', en: 'Senior Software Engineer (Contract)' }, company: { pt: 'Trio', en: 'Trio' }, location: { pt: 'Remoto', en: 'Remote' }, start: '2024-11', end: '2025-01',
       stack: 'Go · GraphQL · PostgreSQL · AWS · Terraform · Kubernetes · Docker',
-      points: {
-        pt: [
+      points: { pt: [
           'Desenvolvi, por contrato de curto prazo, funcionalidades de gestão patrimonial para cliente norte-americano do setor de aposentadoria.',
           'Projetei produtos API-first que permitem a instituições financeiras lançar experiências de investimento personalizáveis com implementação rápida.',
         ],
         en: [
           'Built wealth-management features under a short-term contract for a US client in the retirement sector.',
           'Designed API-first products that let financial institutions launch customizable investment experiences with fast implementation.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Senior Software Engineer — Go', en: 'Senior Software Engineer — Go' }, company: { pt: 'Traive', en: 'Traive' }, location: { pt: 'Brasil', en: 'Brazil' }, start: '2023-01', end: '2024-11',
+        ] } },
+    { role: { pt: 'Senior Software Engineer — Go', en: 'Senior Software Engineer — Go' }, company: { pt: 'Traive', en: 'Traive' }, location: { pt: 'Brasil', en: 'Brazil' }, start: '2023-01', end: '2024-11',
       stack: 'Go · GraphQL · Kafka · PostgreSQL · Redis · S3 · Kubernetes · Terraform · Datadog · React',
-      points: {
-        pt: [
+      points: { pt: [
           'Construí os microsserviços em Go que pontuam pedidos de crédito agro para fundos de crédito, da ingestão de dados via Kafka ao score de risco final.',
           'Entreguei enriquecimento de dados e integrei os produtos da plataforma aos sistemas dos clientes.',
           'Operei os serviços em produção no Kubernetes com infraestrutura em Terraform e observabilidade no Datadog.',
@@ -345,14 +331,10 @@ window.PORTFOLIO = {
           'Delivered data enrichment and integrated the platform\'s products with client systems.',
           'Ran the services in production on Kubernetes with Terraform-managed infrastructure and Datadog observability.',
           'Maintained and extended the React frontend, prioritizing work from user feedback and system metrics.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Senior Software Engineer — Go', en: 'Senior Software Engineer — Go' }, company: { pt: 'Dock', en: 'Dock' }, location: { pt: 'Brasil', en: 'Brazil' }, start: '2022-06', end: '2022-12',
+        ] } },
+    { role: { pt: 'Senior Software Engineer — Go', en: 'Senior Software Engineer — Go' }, company: { pt: 'Dock', en: 'Dock' }, location: { pt: 'Brasil', en: 'Brazil' }, start: '2022-06', end: '2022-12',
       stack: 'Go · GraphQL · PostgreSQL · RabbitMQ · Redis · S3 · Kubernetes · Terraform · Datadog',
-      points: {
-        pt: [
+      points: { pt: [
           'Conduzi melhorias de qualidade de código e pipelines de CI/CD em serviços Go distribuídos, refatorando projetos complexos e consolidando código duplicado entre times.',
           'Pesquisei e implementei ferramentas de acompanhamento de desempenho e mecanismos de atualização contínua.',
           'Executei atualizações críticas e migrações de sistema com downtime mínimo, preservando a disponibilidade.',
@@ -361,28 +343,20 @@ window.PORTFOLIO = {
           'Led code-quality and CI/CD pipeline improvements across distributed Go services, refactoring complex projects and consolidating duplicated code across teams.',
           'Researched and implemented performance-tracking tooling and continuous update mechanisms.',
           'Ran critical updates and system migrations with minimal downtime, keeping availability intact.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Software Engineer Pleno — Go', en: 'Mid-level Software Engineer — Go' }, company: { pt: 'Zak', en: 'Zak' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2021-11', end: '2022-06',
+        ] } },
+    { role: { pt: 'Software Engineer Pleno — Go', en: 'Mid-level Software Engineer — Go' }, company: { pt: 'Zak', en: 'Zak' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2021-11', end: '2022-06',
       stack: 'Go · PostgreSQL · MongoDB · Redis · Kafka · Kubernetes · Terraform · Datadog',
-      points: {
-        pt: [
+      points: { pt: [
           'Refatorei microsserviços legados de pagamentos, simplificando arquitetura e código para operações mais eficientes.',
           'Consolidei múltiplos meios de pagamento e payloads sob um padrão único da empresa.',
         ],
         en: [
           'Refactored complex legacy payment microservices, simplifying architecture and code for more efficient operations.',
           'Consolidated multiple payment methods and payloads under a single company standard.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Software Engineer (Júnior a Pleno) — Node.js / Go', en: 'Software Engineer (Junior to Mid-level) — Node.js / Go' }, company: { pt: 'Stefanini', en: 'Stefanini' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2021-02', end: '2021-10',
+        ] } },
+    { role: { pt: 'Software Engineer (Júnior a Pleno) — Node.js / Go', en: 'Software Engineer (Junior to Mid-level) — Node.js / Go' }, company: { pt: 'Stefanini', en: 'Stefanini' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2021-02', end: '2021-10',
       stack: 'Node.js · TypeScript · Go · Kafka · DynamoDB · ElasticSearch · Serverless · Docker',
-      points: {
-        pt: [
+      points: { pt: [
           'Migrei de QA para engenharia na mesma empresa e fui promovido a pleno em quatro meses.',
           'Reestruturei fluxos de transações bancárias para cobrir recargas, transações por celular e pagamentos via Pix.',
           'Construí integrações com os bancos Topázio, Votorantim e ABC, além do enriquecimento de dados de clientes via bureau PH3A sobre o core bancário Topaz.',
@@ -393,41 +367,23 @@ window.PORTFOLIO = {
           'Reworked banking transaction flows to cover top-ups, mobile transactions and Pix instant payments.',
           'Built integrations with Topázio, Votorantim and ABC banks, plus customer data enrichment through the PH3A bureau on the Topaz core banking system.',
           'Reconciled banking data between the client and BV bank.',
-        ]
-      }
-    },
-    {
-      role: { pt: 'Freelance Golang Developer', en: 'Freelance Golang Developer' }, cv: 'brief', company: { pt: 'Confidencial', en: 'Confidential' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2021-05', end: '2021-06',
+        ] } },
+    { role: { pt: 'Freelance Golang Developer', en: 'Freelance Golang Developer' }, cv: 'brief', company: { pt: 'Confidencial', en: 'Confidential' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2021-05', end: '2021-06',
       stack: 'Go · Docker',
-      points: {
-        pt: ['Entreguei APIs, migrações de framework, correções de bugs e revisões de código para cliente sob contrato.'],
-        en: ['Delivered APIs, framework migrations, bug fixes and code reviews for a client under contract.']
-      }
-    },
-    {
-      role: { pt: 'QA Engineer', en: 'QA Engineer' }, company: { pt: 'Stefanini', en: 'Stefanini' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2020-05', end: '2021-02',
+      points: { pt: ['Entreguei APIs, migrações de framework, correções de bugs e revisões de código para cliente sob contrato.'],
+                en: ['Delivered APIs, framework migrations, bug fixes and code reviews for a client under contract.'] } },
+    { role: { pt: 'QA Engineer', en: 'QA Engineer' }, company: { pt: 'Stefanini', en: 'Stefanini' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2020-05', end: '2021-02',
       stack: 'Appium · Node.js · Postman · Axios · AWS Lambda · CloudWatch',
-      points: {
-        pt: ['Testei apps React Native manualmente e com automação (Appium), validando APIs e gerando massas de teste via automações REST.', 'Configurei monitoramento e alarmes de erro na AWS para os fluxos sob teste, antecipando falhas antes do release.'],
-        en: ['Tested React Native apps manually and with automation (Appium), validating APIs and generating test data through REST automations.', 'Set up AWS monitoring and error alarms for the flows under test, surfacing failures before release.']
-      }
-    },
-    {
-      role: { pt: 'QA Engineer', en: 'QA Engineer' }, company: { pt: 'MarketUP', en: 'MarketUP' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2019-06', end: '2020-04',
+      points: { pt: ['Testei apps React Native manualmente e com automação (Appium), validando APIs e gerando massas de teste via automações REST.', 'Configurei monitoramento e alarmes de erro na AWS para os fluxos sob teste, antecipando falhas antes do release.'],
+                en: ['Tested React Native apps manually and with automation (Appium), validating APIs and generating test data through REST automations.', 'Set up AWS monitoring and error alarms for the flows under test, surfacing failures before release.'] } },
+    { role: { pt: 'QA Engineer', en: 'QA Engineer' }, company: { pt: 'MarketUP', en: 'MarketUP' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2019-06', end: '2020-04',
       stack: 'Selenium WebDriver JS · OrangeTesting · BDD/TDD · JavaScript · jQuery',
-      points: {
-        pt: ['Automatizei testes end-to-end com Selenium WebDriver e OrangeTesting, sob práticas de BDD e TDD.', 'Avaliei qualidade e desempenho dos sistemas da empresa e reportei regressões para os times de desenvolvimento.'],
-        en: ['Automated end-to-end tests with Selenium WebDriver and OrangeTesting under BDD and TDD practices.', 'Assessed the quality and performance of the company\'s systems and reported regressions to the development teams.']
-      }
-    },
-    {
-      role: { pt: 'Freelance Game Developer', en: 'Freelance Game Developer' }, cv: 'brief', company: { pt: 'Freelance', en: 'Freelance' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2016-12', end: '2019-06',
+      points: { pt: ['Automatizei testes end-to-end com Selenium WebDriver e OrangeTesting, sob práticas de BDD e TDD.', 'Avaliei qualidade e desempenho dos sistemas da empresa e reportei regressões para os times de desenvolvimento.'],
+                en: ['Automated end-to-end tests with Selenium WebDriver and OrangeTesting under BDD and TDD practices.', 'Assessed the quality and performance of the company\'s systems and reported regressions to the development teams.'] } },
+    { role: { pt: 'Freelance Game Developer', en: 'Freelance Game Developer' }, cv: 'brief', company: { pt: 'Freelance', en: 'Freelance' }, location: { pt: 'São Paulo', en: 'São Paulo' }, start: '2016-12', end: '2019-06',
       stack: 'Unity · C# · Unreal Engine 4 · Blueprint/C++ · Rigging',
-      points: {
-        pt: ['Unity (C#), Unreal Engine 4 (Blueprint/C++) e rigging de personagens: construí inventários, menus, sistemas de vida e respawn e IA de inimigos, e adaptei jogos para mobile sem perda de desempenho.'],
-        en: ['Unity (C#), Unreal Engine 4 (Blueprint/C++) and character rigging: built inventories, menus, health and respawn systems and enemy AI, and ported games to mobile without losing performance.']
-      }
-    },
+      points: { pt: ['Unity (C#), Unreal Engine 4 (Blueprint/C++) e rigging de personagens: construí inventários, menus, sistemas de vida e respawn e IA de inimigos, e adaptei jogos para mobile sem perda de desempenho.'],
+                en: ['Unity (C#), Unreal Engine 4 (Blueprint/C++) and character rigging: built inventories, menus, health and respawn systems and enemy AI, and ported games to mobile without losing performance.'] } },
   ],
 
   skills: [
