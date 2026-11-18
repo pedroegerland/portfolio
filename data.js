@@ -192,6 +192,10 @@ window.PORTFOLIO = {
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'DynamoDB', 'SQLite (pure Go)', 'AWS Lambda', 'CloudFront', 'AWS CDK (Go)', 'LocalStack', 'JWT HS256', 'React 18', 'TypeScript', 'Tailwind', 'TanStack Query', 'GitHub Actions'],
       shots: [
+        { src: 'assets/projects/mm_preview_painel.jpg', alt: { pt: 'Painel da cantina com a marca do contrato (Colégio Aurora): vendas, solicitações e alunos', en: 'Canteen dashboard in the contract brand (Colégio Aurora): sales, requests and students' } },
+        { src: 'assets/projects/mm_preview_responsavel.jpg', alt: { pt: 'App do responsável: saldo, controles (limite diário, bloqueios, alergias) e extrato', en: 'Guardian app: balance, controls (daily limit, blocked items, allergies) and ledger' } },
+        { src: 'assets/projects/mm_preview_login.jpg', alt: { pt: 'Login whitelabel: nome, cor e textos vêm do template do contrato', en: 'White-label login: name, color and copy come from the contract template' } },
+        { src: 'assets/projects/mm_mobile_responsavel.jpg', alt: { pt: 'Controles do responsável no celular', en: 'Guardian controls on mobile' } },
         { src: 'assets/projects/cg_dashboard.jpg', alt: { pt: 'Painel do dia: vendas, solicitações pendentes com aprovar/cancelar, mais vendidos e saldo baixo', en: 'Day dashboard: sales, pending requests with approve/cancel, top sellers and low balances' } },
         { src: 'assets/projects/cg_comanda_apos_compra.jpg', alt: { pt: 'Comanda do aluno com extrato imutável: compras, crédito e solicitação pendente', en: 'Student tab with immutable ledger: purchases, credit and a pending request' } },
         { src: 'assets/projects/cg_compra_modal.jpg', alt: { pt: 'Registrar compra no caixa com validação de saldo', en: 'Counter sale with balance validation' } },
@@ -292,7 +296,12 @@ window.PORTFOLIO = {
       repo: 'https://github.com/pedroegerland/servicedeck',
       repoPrivate: true,
       tags: ['Go 1.27', 'CQRS', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'pdfmake', 'DynamoDB', 'AWS Lambda', 'CloudFront', 'Brevo', 'Amazon SES', 'AWS CDK (Go)', 'GitHub Actions'],
-      shots: [],
+      shots: [
+        { src: 'assets/projects/sd_configurador.jpg', alt: { pt: 'Configurador com o preview real do produto (CantinaPay) na marca escolhida e perguntas de porte', en: 'Configurator with the real product preview (CantinaPay) in the chosen brand and sizing questions' } },
+        { src: 'assets/projects/sd_calculadora.jpg', alt: { pt: 'Calculadora de custo e margem por SaaS: consumo, free tier, custos por hospedagem e alertas', en: 'Per-SaaS cost & margin calculator: usage, free tier, cost per hosting option and warnings' } },
+        { src: 'assets/projects/sd_admin_fila.jpg', alt: { pt: 'Fila administrativa: status, custo por contrato e script de infra dedicada (só a conta dona)', en: 'Admin queue: status, cost per contract and dedicated-infra script (owner account only)' } },
+        { src: 'assets/projects/sd_meus_contratos.jpg', alt: { pt: 'Área do cliente com login: todos os contratos do mesmo e-mail', en: 'Logged-in customer area: every contract of the same e-mail' } },
+      ],
       desc: {
         pt: 'Control Plane whitelabel da EgerlandDev Solutions: vitrine dos 6 SaaS (AgendaDeck, FonoReport AI, CantinaPay, MicroTrade Bot, ImobiDeck e LojaDeck), configurador com preview real do produto e perguntas de porte por SaaS, área do cliente com login, provisionamento automático das instâncias, calculadora de custo e margem por produto e fila administrativa.',
         en: 'White-label control plane for EgerlandDev Solutions: showcase of 6 SaaS products (AgendaDeck, FonoReport AI, CantinaPay, MicroTrade Bot, ImobiDeck and LojaDeck), configurator with the real product preview and per-product sizing questions, customer area with login, automatic instance provisioning, per-product cost & margin calculator and admin queue.',
