@@ -193,8 +193,8 @@ window.PORTFOLIO = {
       tags: ['Go 1.27', 'net/http', 'DynamoDB', 'SQLite (pure Go)', 'AWS Lambda', 'CloudFront', 'AWS CDK (Go)', 'LocalStack', 'JWT HS256', 'React 18', 'TypeScript', 'Tailwind', 'TanStack Query', 'GitHub Actions'],
       shots: [
         { src: 'assets/projects/mm_preview_painel.jpg', alt: { pt: 'Painel da cantina com a marca do contrato (Colégio Aurora): vendas, solicitações e alunos', en: 'Canteen dashboard in the contract brand (Colégio Aurora): sales, requests and students' } },
-        { src: 'assets/projects/mm_preview_responsavel.jpg', alt: { pt: 'App do responsável: saldo, controles (limite diário, bloqueios, alergias) e extrato', en: 'Guardian app: balance, controls (daily limit, blocked items, allergies) and ledger' } },
-        { src: 'assets/projects/mm_preview_login.jpg', alt: { pt: 'Login whitelabel: nome, cor e textos vêm do template do contrato', en: 'White-label login: name, color and copy come from the contract template' } },
+        { src: 'assets/projects/mm_preview_responsavel.jpg', alt: { pt: 'App do responsável: controles (limite diário, bloqueios, alergias), avisos por e-mail e extrato', en: 'Guardian app: controls (daily limit, blocked items, allergies), e-mail alerts and ledger' } },
+        { src: 'assets/projects/mm_preview_login.jpg', alt: { pt: 'Login whitelabel com recuperação de senha por e-mail: nome, cor e textos vêm do template do contrato', en: 'White-label login with e-mail password reset: name, color and copy come from the contract template' } },
         { src: 'assets/projects/mm_mobile_responsavel.jpg', alt: { pt: 'Controles do responsável no celular', en: 'Guardian controls on mobile' } },
         { src: 'assets/projects/cg_dashboard.jpg', alt: { pt: 'Painel do dia: vendas, solicitações pendentes com aprovar/cancelar, mais vendidos e saldo baixo', en: 'Day dashboard: sales, pending requests with approve/cancel, top sellers and low balances' } },
         { src: 'assets/projects/cg_comanda_apos_compra.jpg', alt: { pt: 'Comanda do aluno com extrato imutável: compras, crédito e solicitação pendente', en: 'Student tab with immutable ledger: purchases, credit and a pending request' } },
@@ -221,6 +221,7 @@ window.PORTFOLIO = {
           'Whitelabel por contrato: template versionado (marca, plano, add-ons, vigência) aplicado por API de provisionamento; entitlements viram 402/423 nas regras e a UI gera a paleta da cor do cliente.',
           'Deploy compartilhado em free tier: Lambda arm64 (zip) + Function URL + CloudFront + DynamoDB provisionado; várias escolas em /c/{slug} na mesma tabela, isoladas por prefixo de chave e chave de sessão própria; saldo gravado com escrita condicional contra gasto duplo.',
           'Mesmas portas para SQLite e DynamoDB, suíte inteira rodando nos dois (LocalStack no CI); painel otimizado de 10,7 para 0,69 RCU/s por escola, medido em teste.',
+          'Avisos por e-mail aos responsáveis (saldo baixo, pedido, compra bloqueada) e recuperação de senha com link assinado de uso único, sem tabela de tokens; cota diária compartilhada por todas as escolas num contador atômico do DynamoDB; domínio próprio por escola resolvido pelo host.',
         ],
         en: [
           'Go 1.27 backend on stdlib + pure-Go SQLite (no CGO): hexagonal layout, ports for repositories/hasher/tokens, embedded migrations, money in integer cents.',
@@ -230,6 +231,7 @@ window.PORTFOLIO = {
           'Contract-driven white-label: versioned template (brand, plan, add-ons, validity) applied through a provisioning API; entitlements become 402/423 in the rules and the UI derives the palette from the customer color.',
           'Free-tier shared deployment: arm64 Lambda (zip) + Function URL + CloudFront + provisioned DynamoDB; many schools under /c/{slug} in one table, isolated by key prefix and per-instance session keys; balances written with conditional writes against double spending.',
           'Same ports for SQLite and DynamoDB, whole suite running on both (LocalStack in CI); dashboard cut from 10.7 to 0.69 RCU/s per school, measured in a test.',
+          'E-mail alerts for guardians (low balance, pre-orders, blocked sales) and password reset with a signed single-use link, no token table; a daily e-mail budget shared by every school in an atomic DynamoDB counter; per-school custom domains resolved from the host.',
         ],
       },
     },
