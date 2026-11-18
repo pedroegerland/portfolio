@@ -297,8 +297,8 @@ window.PORTFOLIO = {
       repoPrivate: true,
       tags: ['Go 1.27', 'CQRS', 'net/http', 'React 18', 'TypeScript', 'Vite', 'Tailwind', 'pdfmake', 'DynamoDB', 'AWS Lambda', 'CloudFront', 'Brevo', 'Amazon SES', 'AWS CDK (Go)', 'GitHub Actions'],
       shots: [
-        { src: 'assets/projects/sd_configurador.jpg', alt: { pt: 'Configurador com o preview real do produto (CantinaPay) na marca escolhida e perguntas de porte', en: 'Configurator with the real product preview (CantinaPay) in the chosen brand and sizing questions' } },
-        { src: 'assets/projects/sd_calculadora.jpg', alt: { pt: 'Calculadora de custo e margem por SaaS: consumo, free tier, custos por hospedagem e alertas', en: 'Per-SaaS cost & margin calculator: usage, free tier, cost per hosting option and warnings' } },
+        { src: 'assets/projects/sd_configurador.jpg', alt: { pt: 'Configurador: perguntas de porte e opcionais recalculam o orçamento na hora, com a composição do valor item a item', en: 'Configurator: sizing questions and add-ons recalculate the quote live, itemized line by line' } },
+        { src: 'assets/projects/sd_calculadora.jpg', alt: { pt: 'Calculadora de custo e margem por SaaS: consumo, free tier, custo e margem por hospedagem e composição do preço', en: 'Per-SaaS cost & margin calculator: usage, free tier, cost and margin per hosting option and price breakdown' } },
         { src: 'assets/projects/sd_admin_fila.jpg', alt: { pt: 'Fila administrativa: status, custo por contrato e script de infra dedicada (só a conta dona)', en: 'Admin queue: status, cost per contract and dedicated-infra script (owner account only)' } },
         { src: 'assets/projects/sd_meus_contratos.jpg', alt: { pt: 'Área do cliente com login: todos os contratos do mesmo e-mail', en: 'Logged-in customer area: every contract of the same e-mail' } },
       ],
