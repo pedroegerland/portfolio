@@ -260,7 +260,8 @@ window.PORTFOLIO = {
     {
       id: 'agendadeck',
       name: 'AgendaDeck',
-      status: 'wip',
+      status: 'live',
+      live: 'https://d3isokxrdwp6ii.cloudfront.net/preview',
       repo: 'https://github.com/pedroegerland/agendadeck',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'DynamoDB', 'SQLite (pure Go)', 'AWS Lambda', 'EventBridge Scheduler', 'CloudFront', 'AWS CDK (Go)', 'LocalStack', 'React 18', 'TypeScript', 'Tailwind', 'TanStack Query', 'GitHub Actions'],
