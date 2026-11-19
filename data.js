@@ -194,7 +194,7 @@ window.PORTFOLIO = {
       shots: [
         { src: 'assets/projects/mm_preview_painel.jpg', alt: { pt: 'Painel da cantina com a marca do contrato (Colégio Aurora): vendas, alunos e pedidos antecipados com horário de retirada (recreio ou almoço)', en: 'Canteen dashboard in the contract brand (Colégio Aurora): sales, students and pre-orders with a pickup slot (break or lunch)' } },
         { src: 'assets/projects/mm_preview_responsavel.jpg', alt: { pt: 'App do responsável: resumo dos últimos 7 dias por selo nutricional, avisos por e-mail e WhatsApp com consentimento, e extrato', en: 'Guardian app: 7-day summary by nutrition seal, e-mail and opt-in WhatsApp alerts, and ledger' } },
-        { src: 'assets/projects/mm_preview_aluno.jpg', alt: { pt: 'App do aluno: saldo, limite de hoje, o que o responsável agendou e o que o aluno pode escolher sozinho', en: 'Student app: balance, today\'s limit, what the guardian scheduled and what the student may choose on their own' } },
+        { src: 'assets/projects/mm_preview_aluno.jpg', alt: { pt: 'App do aluno: saldo, limite de hoje, o que o responsável agendou, o que o aluno pode escolher sozinho e as últimas compras', en: 'Student app: balance, today\'s limit, what the guardian scheduled, what the student may choose on their own and recent purchases' } },
         { src: 'assets/projects/mm_mobile_aluno.jpg', alt: { pt: 'App do aluno no celular', en: 'Student app on mobile' } },
         { src: 'assets/projects/mm_preview_login.jpg', alt: { pt: 'Login whitelabel com recuperação de senha por e-mail: nome, cor e textos vêm do template do contrato', en: 'White-label login with e-mail password reset: name, color and copy come from the contract template' } },
         { src: 'assets/projects/mm_mobile_responsavel.jpg', alt: { pt: 'Controles do responsável no celular (app instalável na tela inicial)', en: 'Guardian controls on mobile (installable to the home screen)' } },
@@ -225,7 +225,7 @@ window.PORTFOLIO = {
           'Mesmas portas para SQLite e DynamoDB, suíte inteira rodando nos dois (LocalStack no CI); painel otimizado de 10,7 para 0,69 RCU/s por escola, medido em teste.',
           'Avisos por e-mail aos responsáveis (saldo baixo, pedido, compra bloqueada) e recuperação de senha com link assinado de uso único, sem tabela de tokens; cota diária compartilhada por todas as escolas num contador atômico do DynamoDB; domínio próprio por escola resolvido pelo host.',
           'App instalável (PWA com manifesto e ícone por escola), LGPD (consentimento versionado, exportação e exclusão de conta, anonimização de aluno, trilha de auditoria com expiração) e diferenciais de cantina: limite por dia da semana, selo nutricional, estoque com escrita condicional, horário de retirada, carteirinha com QR Code e caixa rápido pela câmera.',
-          'Acesso do próprio aluno com código e senha criados pelo responsável: vê saldo, limite do dia e o que foi agendado, e só pede sozinho se o responsável liberar e nas categorias escolhidas; bloqueios, alergias e limites valem sempre, e o aluno nunca adiciona crédito nem muda controles.',
+          'Acesso do próprio aluno com código e senha criados pelo responsável: vê saldo, limite do dia e o que foi agendado, e só pede sozinho se o responsável liberar e nas categorias escolhidas; bloqueios, alergias e limites valem sempre, e o aluno nunca adiciona crédito nem muda controles; o responsável recebe e-mail a cada pedido do aluno e todo login trava por 15 minutos após 5 senhas erradas.',
         ],
         en: [
           'Go 1.27 backend on stdlib + pure-Go SQLite (no CGO): hexagonal layout, ports for repositories/hasher/tokens, embedded migrations, money in integer cents.',
@@ -237,7 +237,7 @@ window.PORTFOLIO = {
           'Same ports for SQLite and DynamoDB, whole suite running on both (LocalStack in CI); dashboard cut from 10.7 to 0.69 RCU/s per school, measured in a test.',
           'E-mail alerts for guardians (low balance, pre-orders, blocked sales) and password reset with a signed single-use link, no token table; a daily e-mail budget shared by every school in an atomic DynamoDB counter; per-school custom domains resolved from the host.',
           'Installable app (PWA with per-school manifest and icon), LGPD/GDPR-style privacy (versioned consent, data export and account deletion, student anonymization, expiring audit trail) and canteen features: per-weekday limits, nutrition seals, stock with conditional writes, pickup slots, QR student cards and camera-based quick checkout.',
-          'Student login with a code and password set by the guardian: balance, today\'s limit and scheduled pre-orders; students order on their own only when the guardian allows it and from the chosen categories, with blocks, allergies and limits always enforced and no way to add credit or change controls.',
+          'Student login with a code and password set by the guardian: balance, today\'s limit and scheduled pre-orders; students order on their own only when the guardian allows it and from the chosen categories, with blocks, allergies and limits always enforced and no way to add credit or change controls; guardians get an e-mail for every student order, and every login locks for 15 minutes after 5 wrong passwords.',
         ],
       },
     },
