@@ -330,6 +330,7 @@ window.PORTFOLIO = {
           'Provisiona o CantinaPay de ponta a ponta: envia o template do contrato ao MealMate, cria o primeiro admin, desprovisiona com confirmação; infra dedicada só por script manual liberado à conta dona.',
           'Contas de cliente: convite "defina sua senha" no 1º contrato, novos contratos entram na mesma conta, reset com token de uso único; e-mails transacionais via Brevo.',
           'Calculadora de custo × margem com um modelo de consumo por SaaS (alunos, agendas, horas de IA, imóveis, pedidos…), limites do free tier e alertas de precificação.',
+          'Fechamento mensal automático: EventBridge Scheduler (free tier) fatura o excedente de uso de cada contrato, de forma idempotente, acumula valores abaixo do mínimo e cobra via Asaas (Pix, boleto ou cartão) com webhook de pagamento; acordo de tratamento de dados (LGPD) gerado por contrato e aceito online com registro de nome, data, IP e hash do texto.',
         ],
         en: [
           'Hexagonal Go 1.27 backend with CQRS (separated Commands and Queries), stripped infrastructure metadata on public endpoints, in-memory repository for local dev and provisioned DynamoDB in production.',
@@ -338,6 +339,7 @@ window.PORTFOLIO = {
           'Provisions CantinaPay end to end: sends the contract template to MealMate, creates the first admin, deprovisions with confirmation; dedicated infra only through a manual script unlocked for the owner account.',
           "Customer accounts: 'set your password' invite on the first contract, later contracts join the same account, single-use reset tokens; transactional e-mail via Brevo.",
           'Cost × margin calculator with one usage model per SaaS (students, calendars, AI hours, listings, orders…), free-tier limits and pricing warnings.',
+          'Automatic month-end billing: EventBridge Scheduler (free tier) invoices each contract\'s usage above its plan idempotently, carries amounts under the minimum and charges through Asaas (Pix, boleto or card) with a payment webhook; a per-contract LGPD data processing agreement accepted online with name, time, IP and text hash recorded.',
         ],
       },
     },
