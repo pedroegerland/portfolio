@@ -430,8 +430,8 @@ window.PORTFOLIO = {
         { src: 'assets/projects/sd_meus_contratos.jpg', alt: { pt: 'Área do cliente com login: todos os contratos do mesmo e-mail', en: 'Logged-in customer area: every contract of the same e-mail' } },
       ],
       desc: {
-        pt: 'Control Plane whitelabel da EgerlandDev Solutions: vitrine dos 6 SaaS (AgendaDeck, FonoReport AI, CantinaPay, MicroTrade Radar, ImobiDeck e LojaDeck), configurador com preview real do produto e perguntas de porte por SaaS, área do cliente com login, provisionamento automático das instâncias, calculadora de custo e margem por produto e fila administrativa.',
-        en: 'White-label control plane for EgerlandDev Solutions: showcase of 6 SaaS products (AgendaDeck, FonoReport AI, CantinaPay, MicroTrade Radar, ImobiDeck and LojaDeck), configurator with the real product preview and per-product sizing questions, customer area with login, automatic instance provisioning, per-product cost & margin calculator and admin queue.',
+        pt: 'Control Plane whitelabel da EgerlandDev Solutions: vitrine dos 5 SaaS (AgendaDeck, CantinaPay, MicroTrade Radar, ImobiDeck e LojaDeck), configurador com preview real do produto e perguntas de porte por SaaS, área do cliente com login, provisionamento automático das instâncias, calculadora de custo e margem por produto e fila administrativa.',
+        en: 'White-label control plane for EgerlandDev Solutions: showcase of 5 SaaS products (AgendaDeck, CantinaPay, MicroTrade Radar, ImobiDeck and LojaDeck), configurator with the real product preview and per-product sizing questions, customer area with login, automatic instance provisioning, per-product cost & margin calculator and admin queue.',
       },
       points: {
         pt: [
