@@ -154,7 +154,8 @@ window.PORTFOLIO = {
     {
       id: 'imobideck',
       name: 'ImobiDeck',
-      status: 'wip',
+      status: 'live',
+      live: 'https://imoveis.pedroegerland.com/preview',
       repo: 'https://github.com/pedroegerland/real-estate',
       repoPrivate: true,
       tags: ['Go 1.27', 'net/http', 'DynamoDB', 'SQLite (pure Go)', 'S3 + CloudFront (OAC)', 'AWS Lambda', 'AWS CDK (Go)', 'Leaflet', 'VRSync (ZAP/VivaReal/OLX)', 'React 18', 'TypeScript', 'Tailwind', 'TanStack Query', 'GitHub Actions'],
