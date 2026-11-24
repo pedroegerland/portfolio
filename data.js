@@ -283,6 +283,7 @@ window.PORTFOLIO = {
         { src: 'assets/projects/ad_mobile_reserva.jpg', alt: { pt: 'Reserva do cliente pelo link do e-mail: remarcar, cancelar e adicionar à agenda (.ics)', en: 'The customer\'s booking from the e-mail link: reschedule, cancel and add to calendar (.ics)' } },
         { src: 'assets/projects/ad_painel.jpg', alt: { pt: 'Painel: atendimentos do dia, previsto, semana, taxa de faltas, pedidos a confirmar e exportação CSV', en: 'Dashboard: today\'s bookings, expected revenue, week, no-show rate, bookings to confirm and CSV export' } },
         { src: 'assets/projects/ad_reserva_equipe.jpg', alt: { pt: 'Reserva aberta pela equipe: dados do cliente, WhatsApp, confirmar, compareceu/faltou, remarcar e cancelar', en: 'Booking opened by staff: customer details, WhatsApp, confirm, attended/no-show, reschedule and cancel' } },
+        { src: 'assets/projects/ad_mobile_sinal_pix.jpg', alt: { pt: 'Sinal por Pix na chave do próprio negócio: QR Code, copia e cola, código e prazo; sem sinal no prazo, o horário é liberado', en: 'Pix deposit to the business\'s own key: QR code, copy-and-paste code, reference and deadline; unpaid bookings are released' } },
         { src: 'assets/projects/ad_ficha_cliente.jpg', alt: { pt: 'Ficha do cliente: reservas, atendimentos e gasto, faltas, próximo horário, observação interna e histórico', en: 'Customer file: bookings, visits and spend, no-shows, next booking, private note and history' } },
         { src: 'assets/projects/ad_recorrente.jpg', alt: { pt: 'Agendamento recorrente: toda semana, a cada 2 ou 4 semanas, pulando datas ocupadas', en: 'Recurring booking: every week, every 2 or 4 weeks, skipping taken dates' } },
         { src: 'assets/projects/ad_mobile_ficha.jpg', alt: { pt: 'Ficha do cliente no celular', en: 'Customer file on a phone' } },
@@ -305,6 +306,7 @@ window.PORTFOLIO = {
           'LGPD e proteção: aviso versionado aceito na reserva, exportação e anonimização de cliente pelo admin, reservas expiram por TTL em 2 anos; limite por IP e por e-mail com contador TTL, honeypot, CSP/HSTS, header secreto CloudFront→Lambda e links de e-mail só para hosts confiáveis.',
           'Frontend React + TanStack Query + Tailwind: agenda dia/semana com encaixe e bloqueio por clique, cadastro de profissionais, serviços e equipe, painel com taxa de faltas e CSV; a rota /preview mostra as telas reais com a marca enviada pelo configurador do ServiceDeck.',
           'Infra em CDK (Go) dentro do always free: Lambda arm64 + Function URL + CloudFront + DynamoDB provisionado com a tabela em 3 RCU/WCU e o índice em 2 (o que sobrava na conta) e logs de 7 dias; a infra dedicada do add-on pago é só por deploy manual.',
+          'Sinal por Pix para segurar reservas online: o serviço define o valor, o BR Code (padrão EMV do Banco Central) é gerado no Go para a chave do próprio negócio, sem intermediário nem tarifa; a reserva fica pendente segurando o horário, a equipe confere no extrato e confirma, e a mesma fila horária dos lembretes libera sozinha as não pagas no prazo.',
         ],
         en: [
           'Hexagonal Go 1.27 backend reusing MealMate\'s white-label platform (versioned template, 402/423 entitlements, /c/{slug} on one Lambda, per-contract session keys); the same ports on SQLite and DynamoDB, with the whole suite running on both (LocalStack).',
@@ -316,6 +318,7 @@ window.PORTFOLIO = {
           'LGPD and protection: a versioned notice accepted at booking, customer export and anonymization by the admin, bookings expire through TTL after 2 years; per-IP and per-e-mail limits with TTL counters, a honeypot, CSP/HSTS, a secret CloudFront→Lambda header and e-mail links only to trusted hosts.',
           'React + TanStack Query + Tailwind frontend: day/week agenda with click-to-book and blocks, professionals, services and team, a dashboard with the no-show rate and CSV export; /preview renders the real screens in the brand sent by the ServiceDeck configurator.',
           'CDK (Go) infrastructure inside the always-free tier: arm64 Lambda + Function URL + CloudFront + DynamoDB provisioned with the table at 3 RCU/WCU and the index at 2 (what was left in the account) and 7-day logs; the paid add-on\'s dedicated infra is deploy-by-hand only.',
+          'Pix deposit to hold online bookings: the service sets the amount, the BR Code (Banco Central\'s EMV standard) is built in Go for the business\'s own key, with no intermediary or fee; the booking stays pending holding the slot, staff check the bank statement and confirm, and the same hourly queue as reminders releases unpaid ones at the deadline.',
         ],
       },
     },
